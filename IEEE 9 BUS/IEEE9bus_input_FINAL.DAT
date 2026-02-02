@@ -1,0 +1,189 @@
+*********************************************
+* Barras
+*********************************************
+SET NB /
+        B001 Bus1_16.5kV
+        B002 Bus2_18kV
+        B003 Bus3_13.8kV
+        B004 Bus4_230kV
+        B005 Bus5_230kV
+        B006 Bus6_230kV
+        B007 Bus7_230kV
+        B008 Bus8_230kV
+        B009 Bus9_230kV
+/;
+
+*********************************************
+* Demandas
+*********************************************
+TABLE Demanda(NB,*)
+                Pc
+        B005  125.00
+        B006   90.00
+        B008  100.00
+;
+
+*********************************************
+* Termica
+*********************************************
+SET  GT  /
+        T001 G2Steam 18       TG-1
+        T002 G3Steam 13.8     TG-2
+/;
+
+SET  PtBus(GT,NB) /
+        T001.B002
+        T002.B003
+/;
+
+TABLE PtData(GT,*)
+                Pgen      Pmin      Pmax      Costo1    CI1       CI2       Pmax1     Pmax2   Forzada   Sist  Calif
+        T001  163.000   50.000   192.000   8000.00   50.00     50.00    192.000   192.000     no        1     101
+        T002   85.000   30.000   128.000   9000.00   60.00     60.00    128.000   128.000     no        1     102
+;
+
+*********************************************
+* Hidraulica
+*********************************************
+SET  GH  /
+        H001 G1Hydro 16.5     G-1
+/;
+
+SET  PhBus(GH,NB) /
+        H001.B001
+/;
+
+TABLE PhData(GH,*)
+                Pgen      Pmin      Pmax      CI        Forzada   Sist    Cmgh
+        H001   71.600   20.000   247.500   2.00         no        1      yes
+;
+
+*********************************************
+* Enlaces
+*********************************************
+SET  ENL  /
+        E001    T1_Bus1-Bus4 *Trafo1
+        E002    T2_Bus2-Bus7 *Trafo2
+        E003    T3_Bus3-Bus9 *Trafo3
+        E004    Line4-5_230kV *L-4-5
+        E005    Line4-6_230kV *L-4-6
+        E006    Line5-7_230kV *L-5-7
+        E007    Line6-9_230kV *L-6-9
+        E008    Line7-8_230kV *L-7-8
+        E009    Line8-9_230kV *L-8-9
+/;
+
+SET  FBus(ENL,NB,NB) /
+        E001.B001.B004
+        E002.B002.B007
+        E003.B003.B009
+        E004.B004.B005
+        E005.B004.B006
+        E006.B005.B007
+        E007.B006.B009
+        E008.B007.B008
+        E009.B008.B009
+/;
+ 
+TABLE  FData(ENL,*)
+                   R0       X0         G0      Pmax     Cong  Sist
+        E001    0.000000  0.0576   0.00000  0250.000    no     1
+        E002    0.000000  0.0625   0.00000  0200.000    no     1
+        E003    0.000000  0.0586   0.00000  0150.000    no     1
+        E004    0.010000  0.0850   0.00000  0300.000    no     1
+        E005    0.017000  0.0920   0.00000  0300.000    no     1
+        E006    0.032000  0.1610   0.00000  0300.000    no     1
+        E007    0.039000  0.1700   0.00000  0300.000    no     1
+        E008    0.008500  0.0720   0.00000  0300.000    no     1
+        E009    0.011900  0.1008   0.00000  0300.000    no     1
+;
+ 
+*********************************************
+* Congestion de varios enlaces en simultaneo
+*********************************************
+SET CONG /
+        C1 CONGESTION L1
+        C2 CONGESTION L2
+/;
+
+SET CONGRuta(CONG,ENL)
+      /
+        C1.(E004)
+        C2.(E006)
+      /;
+
+TABLE CONGmax(CONG,*)
+                 Pmax     Cong
+              C1  280     no  
+              C2  280     no
+;
+ 
+*********************************************
+* Congestion por area de seguridad hacia arriba
+*********************************************
+SET CONG_AS_ARRIBA /
+       C_AS_ARRIBA001    L1_AR
+       C_AS_ARRIBA002    L2_AR
+/;
+
+SET CONGRuta_AS_ARRIBA_ENL(CONG_AS_ARRIBA,ENL) /
+       C_AS_ARRIBA001.(E004,E005)
+       C_AS_ARRIBA002.(E006,E008)
+/;
+
+SET CONGRuta_AS_ARRIBA_GH(CONG_AS_ARRIBA,GH) /
+       C_AS_ARRIBA001.(H001)
+/;
+
+TABLE CONGmax_AS_ARRIBA(CONG_AS_ARRIBA,*)
+                          Pmax     Cong       m          b      GenT   FlujoT
+       C_AS_ARRIBA001      1000     no        30      -30000    1000   1000
+       C_AS_ARRIBA002      1000     no        30      -30000    1000   1000
+;
+ 
+*********************************************
+* Congestion por area de seguridad hacia abajo
+*********************************************
+SET CONG_AS_ABAJO /
+       C_AS_ABAJO001    L1_AB
+       C_AS_ABAJO002    L2_AB
+/;
+
+SET CONGRuta_AS_ABAJO_ENL(CONG_AS_ABAJO,ENL) /
+       C_AS_ABAJO001.(E004,E005)
+       C_AS_ABAJO002.(E006,E008)
+/;
+
+SET CONGRuta_AS_ABAJO_GH(CONG_AS_ABAJO,GH) /
+       C_AS_ABAJO001.(H001)
+/;
+
+TABLE CONGmax_AS_ABAJO(CONG_AS_ABAJO,*)
+                          Pmax     Cong       m          b      GenT   FlujoT
+       C_AS_ABAJO001      1000     no        30      -30000    1000   1000
+       C_AS_ABAJO002      1000     no        30      -30000    1000   1000
+;
+
+*********************************************
+* Congestion de varios enlaces en simultaneo - Flujo Minimo
+*********************************************
+SET RS_CONG /
+        C1_MIN_001 CONGESTION L1
+        C2_MIN_001 CONGESTION L2
+/;
+
+SET CONGRuta_RS_D(RS_CONG,ENL)
+      /
+        C1_MIN_001.(E004)
+        C2_MIN_001.(E006)
+      /;
+
+TABLE CONGmin(RS_CONG,*)
+                     Pmin     Cong
+     C1_MIN_001      -280      no
+     C2_MIN_001      -280      no
+;
+
+SCALAR
+ M /0.04/
+;

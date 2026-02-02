@@ -1,421 +1,325 @@
 B 2 C o m p i l a t i o n
-B 551 E x e c u t i o n
-I 552 b
-I 617 demanda
-B 644 Equation Listing    SOLVE Slave_GT Using MIP From line 394
-D 645 eq_obj_GT_total
-D 656 eq_obj_GT
-D 682 eq_min_GT
-D 701 eq_max_GT
-B 722 Column Listing      SOLVE Slave_GT Using MIP From line 394
-E 723 z_slave_GT
-E 731 z_slave_GT_ind
-E 774 p_GT
-E 825 u_GT
-B 854 Model Statistics    SOLVE Slave_GT Using MIP From line 394
-B 875 Solution Report     SOLVE Slave_GT Using MIP From line 394
-F 911 eq_obj_GT_total
-F 919 eq_obj_GT
-F 932 eq_min_GT
-F 945 eq_max_GT
-G 953 z_slave_GT
-G 959 z_slave_GT_ind
-G 972 p_GT
-G 985 u_GT
-B 1003 Equation Listing    SOLVE Slave_GH Using LP From line 396
-D 1004 eq_obj_GH_total
-D 1011 eq_obj_GH
-D 1018 eq_min_GH
-B 1027 Column Listing      SOLVE Slave_GH Using LP From line 396
-E 1028 z_slave_GH
-E 1036 z_slave_GH_ind
-E 1049 p_GH
-B 1064 Model Statistics    SOLVE Slave_GH Using LP From line 396
-B 1085 Solution Report     SOLVE Slave_GH Using LP From line 396
-F 1120 eq_obj_GH_total
-F 1128 eq_obj_GH
-F 1135 eq_min_GH
-G 1137 z_slave_GH
-G 1143 z_slave_GH_ind
-G 1150 p_GH
-B 1164 Equation Listing    SOLVE Slave_Net Using LP From line 398
-D 1165 eq_obj_net
-D 1197 eq_flujo_dc
-D 1242 eq_bal_net
-B 1286 Column Listing      SOLVE Slave_Net Using LP From line 398
-E 1287 z_slave_net
-E 1295 f_dc_linea
-E 1359 ang
-E 1422 inj_fromto
-B 1478 Model Statistics    SOLVE Slave_Net Using LP From line 398
-B 1499 Solution Report     SOLVE Slave_Net Using LP From line 398
-F 1526 eq_obj_net
-F 1534 eq_flujo_dc
-F 1585 eq_bal_net
-G 1624 z_slave_net
-G 1630 f_dc_linea
-G 1681 ang
-G 1725 inj_fromto
-B 1776 E x e c u t i o n
-I 1780 k_count
-I 1783 LB
-I 1786 UB
-I 1789 Gap
-B 1793 Equation Listing    SOLVE Maestro Using LP From line 420
-D 1794 eq_obj_master
-D 1818 eq_cut_GT
-D 1837 eq_cut_GH
-D 1844 eq_cut_net
-B 1851 Column Listing      SOLVE Maestro Using LP From line 420
-E 1852 Z_dual
-E 1860 theta_GT
-E 1903 theta_GH
-E 1916 theta_net
-E 1924 pi_new
-B 1970 Model Statistics    SOLVE Maestro Using LP From line 420
-B 1991 Solution Report     SOLVE Maestro Using LP From line 420
-F 2018 eq_obj_master
-F 2026 eq_cut_GT
-F 2039 eq_cut_GH
-F 2046 eq_cut_net
-G 2047 Z_dual
-G 2053 theta_GT
-G 2066 theta_GH
-G 2073 theta_net
-G 2079 pi_new
-B 2118 Equation Listing    SOLVE Proyeccion Using QCP From line 435
-D 2119 eq_obj_master
-D 2143 eq_cut_GT
-D 2164 eq_cut_GH
-D 2171 eq_cut_net
-D 2176 eq_min_dist
-D 2207 eq_nivel_rst
-B 2214 Column Listing      SOLVE Proyeccion Using QCP From line 435
-E 2215 Z_dual
-E 2224 theta_GT
-E 2267 theta_GH
-E 2280 theta_net
-E 2288 pi_new
-E 2336 dist
-B 2345 Model Statistics    SOLVE Proyeccion Using QCP From line 435
-B 2368 Solution Report     SOLVE Proyeccion Using QCP From line 435
-F 2410 eq_obj_master
-F 2418 eq_cut_GT
-F 2431 eq_cut_GH
-F 2438 eq_cut_net
-F 2442 eq_min_dist
-F 2443 eq_nivel_rst
-G 2447 Z_dual
-G 2453 theta_GT
-G 2466 theta_GH
-G 2473 theta_net
-G 2479 pi_new
-G 2523 dist
-B 2537 Equation Listing    SOLVE Slave_GT Using MIP From line 394
-D 2538 eq_obj_GT_total
-D 2549 eq_obj_GT
-D 2581 eq_min_GT
-D 2600 eq_max_GT
-B 2621 Column Listing      SOLVE Slave_GT Using MIP From line 394
-E 2622 z_slave_GT
-E 2630 z_slave_GT_ind
-E 2673 p_GT
-E 2724 u_GT
-B 2753 Model Statistics    SOLVE Slave_GT Using MIP From line 394
-B 2774 Solution Report     SOLVE Slave_GT Using MIP From line 394
-F 2810 eq_obj_GT_total
-F 2818 eq_obj_GT
-F 2831 eq_min_GT
-F 2844 eq_max_GT
-G 2852 z_slave_GT
-G 2858 z_slave_GT_ind
-G 2871 p_GT
-G 2884 u_GT
-B 2902 Equation Listing    SOLVE Slave_GH Using LP From line 396
-D 2903 eq_obj_GH_total
-D 2910 eq_obj_GH
-D 2921 eq_min_GH
-B 2930 Column Listing      SOLVE Slave_GH Using LP From line 396
-E 2931 z_slave_GH
-E 2939 z_slave_GH_ind
-E 2952 p_GH
-B 2967 Model Statistics    SOLVE Slave_GH Using LP From line 396
-B 2988 Solution Report     SOLVE Slave_GH Using LP From line 396
-F 3015 eq_obj_GH_total
-F 3023 eq_obj_GH
-F 3030 eq_min_GH
-G 3032 z_slave_GH
-G 3038 z_slave_GH_ind
-G 3045 p_GH
-B 3059 Equation Listing    SOLVE Slave_Net Using LP From line 398
-D 3060 eq_obj_net
-D 3096 eq_flujo_dc
-D 3141 eq_bal_net
-B 3185 Column Listing      SOLVE Slave_Net Using LP From line 398
-E 3186 z_slave_net
-E 3194 f_dc_linea
-E 3258 ang
-E 3331 inj_fromto
-B 3387 Model Statistics    SOLVE Slave_Net Using LP From line 398
-B 3408 Solution Report     SOLVE Slave_Net Using LP From line 398
-F 3435 eq_obj_net
-F 3443 eq_flujo_dc
-F 3494 eq_bal_net
-G 3533 z_slave_net
-G 3539 f_dc_linea
-G 3590 ang
-G 3634 inj_fromto
-B 3685 E x e c u t i o n
-I 3689 k_count
-I 3692 LB
-I 3695 UB
-I 3698 Gap
-B 3702 Equation Listing    SOLVE Maestro Using LP From line 420
-D 3703 eq_obj_master
-D 3729 eq_cut_GT
-D 3760 eq_cut_GH
-D 3771 eq_cut_net
-B 3780 Column Listing      SOLVE Maestro Using LP From line 420
-E 3781 Z_dual
-E 3789 theta_GT
-E 3840 theta_GH
-E 3855 theta_net
-E 3864 pi_new
-B 3910 Model Statistics    SOLVE Maestro Using LP From line 420
-B 3931 Solution Report     SOLVE Maestro Using LP From line 420
-F 3958 eq_obj_master
-F 3966 eq_cut_GT
-F 3987 eq_cut_GH
-F 3996 eq_cut_net
-G 3998 Z_dual
-G 4004 theta_GT
-G 4017 theta_GH
-G 4024 theta_net
-G 4030 pi_new
-B 4069 Equation Listing    SOLVE Proyeccion Using QCP From line 435
-D 4070 eq_obj_master
-D 4094 eq_cut_GT
-D 4123 eq_cut_GH
-D 4134 eq_cut_net
-D 4141 eq_min_dist
-D 4180 eq_nivel_rst
-B 4187 Column Listing      SOLVE Proyeccion Using QCP From line 435
-E 4188 Z_dual
-E 4197 theta_GT
-E 4248 theta_GH
-E 4263 theta_net
-E 4272 pi_new
-E 4320 dist
-B 4329 Model Statistics    SOLVE Proyeccion Using QCP From line 435
-B 4352 Solution Report     SOLVE Proyeccion Using QCP From line 435
-F 4394 eq_obj_master
-F 4402 eq_cut_GT
-F 4423 eq_cut_GH
-F 4432 eq_cut_net
-F 4437 eq_min_dist
-F 4438 eq_nivel_rst
-G 4442 Z_dual
-G 4448 theta_GT
-G 4461 theta_GH
-G 4468 theta_net
-G 4474 pi_new
-G 4518 dist
-B 4532 Equation Listing    SOLVE Slave_GT Using MIP From line 394
-D 4533 eq_obj_GT_total
-D 4544 eq_obj_GT
-D 4571 eq_min_GT
-D 4590 eq_max_GT
-B 4611 Column Listing      SOLVE Slave_GT Using MIP From line 394
-E 4612 z_slave_GT
-E 4620 z_slave_GT_ind
-E 4663 p_GT
-E 4712 u_GT
-B 4741 Model Statistics    SOLVE Slave_GT Using MIP From line 394
-B 4762 Solution Report     SOLVE Slave_GT Using MIP From line 394
-F 4798 eq_obj_GT_total
-F 4806 eq_obj_GT
-F 4819 eq_min_GT
-F 4832 eq_max_GT
-G 4840 z_slave_GT
-G 4846 z_slave_GT_ind
-G 4859 p_GT
-G 4872 u_GT
-B 4890 Equation Listing    SOLVE Slave_GH Using LP From line 396
-D 4891 eq_obj_GH_total
-D 4898 eq_obj_GH
-D 4905 eq_min_GH
-B 4914 Column Listing      SOLVE Slave_GH Using LP From line 396
-E 4915 z_slave_GH
-E 4923 z_slave_GH_ind
-E 4936 p_GH
-B 4951 Model Statistics    SOLVE Slave_GH Using LP From line 396
-B 4972 Solution Report     SOLVE Slave_GH Using LP From line 396
-F 4999 eq_obj_GH_total
-F 5007 eq_obj_GH
-F 5014 eq_min_GH
-G 5016 z_slave_GH
-G 5022 z_slave_GH_ind
-G 5029 p_GH
-B 5043 Equation Listing    SOLVE Slave_Net Using LP From line 398
-D 5044 eq_obj_net
-D 5080 eq_flujo_dc
-D 5125 eq_bal_net
-B 5173 Column Listing      SOLVE Slave_Net Using LP From line 398
-E 5174 z_slave_net
-E 5182 f_dc_linea
-E 5246 ang
-E 5319 inj_fromto
-B 5375 Model Statistics    SOLVE Slave_Net Using LP From line 398
-B 5396 Solution Report     SOLVE Slave_Net Using LP From line 398
-F 5423 eq_obj_net
-F 5431 eq_flujo_dc
-F 5482 eq_bal_net
-G 5521 z_slave_net
-G 5527 f_dc_linea
-G 5578 ang
-G 5622 inj_fromto
-B 5673 E x e c u t i o n
-I 5677 k_count
-I 5680 LB
-I 5683 UB
-I 5686 Gap
-B 5690 Equation Listing    SOLVE Maestro Using LP From line 420
-D 5691 eq_obj_master
-D 5717 eq_cut_GT
-D 5746 eq_cut_GH
-D 5761 eq_cut_net
-B 5772 Column Listing      SOLVE Maestro Using LP From line 420
-E 5773 Z_dual
-E 5781 theta_GT
-E 5840 theta_GH
-E 5857 theta_net
-E 5867 pi_new
-B 5913 Model Statistics    SOLVE Maestro Using LP From line 420
-B 5934 Solution Report     SOLVE Maestro Using LP From line 420
-F 5961 eq_obj_master
-F 5969 eq_cut_GT
-F 5998 eq_cut_GH
-F 6009 eq_cut_net
-G 6012 Z_dual
-G 6018 theta_GT
-G 6031 theta_GH
-G 6038 theta_net
-G 6044 pi_new
-B 6083 Equation Listing    SOLVE Proyeccion Using QCP From line 435
-D 6084 eq_obj_master
-D 6108 eq_cut_GT
-D 6137 eq_cut_GH
-D 6152 eq_cut_net
-D 6161 eq_min_dist
-D 6200 eq_nivel_rst
-B 6207 Column Listing      SOLVE Proyeccion Using QCP From line 435
-E 6208 Z_dual
-E 6217 theta_GT
-E 6276 theta_GH
-E 6293 theta_net
-E 6303 pi_new
-E 6351 dist
-B 6360 Model Statistics    SOLVE Proyeccion Using QCP From line 435
-B 6383 Solution Report     SOLVE Proyeccion Using QCP From line 435
-F 6430 eq_obj_master
-F 6438 eq_cut_GT
-F 6467 eq_cut_GH
-F 6478 eq_cut_net
-F 6484 eq_min_dist
-F 6485 eq_nivel_rst
-G 6489 Z_dual
-G 6495 theta_GT
-G 6508 theta_GH
-G 6515 theta_net
-G 6521 pi_new
-G 6565 dist
-B 6579 Equation Listing    SOLVE Slave_GT Using MIP From line 394
-D 6580 eq_obj_GT_total
-D 6591 eq_obj_GT
-D 6614 eq_min_GT
-D 6633 eq_max_GT
-B 6654 Column Listing      SOLVE Slave_GT Using MIP From line 394
-E 6655 z_slave_GT
-E 6663 z_slave_GT_ind
-E 6706 p_GT
-E 6755 u_GT
-B 6784 Model Statistics    SOLVE Slave_GT Using MIP From line 394
-B 6805 Solution Report     SOLVE Slave_GT Using MIP From line 394
-F 6841 eq_obj_GT_total
-F 6849 eq_obj_GT
-F 6862 eq_min_GT
-F 6875 eq_max_GT
-G 6883 z_slave_GT
-G 6889 z_slave_GT_ind
-G 6902 p_GT
-G 6915 u_GT
-B 6933 Equation Listing    SOLVE Slave_GH Using LP From line 396
-D 6934 eq_obj_GH_total
-D 6941 eq_obj_GH
-D 6948 eq_min_GH
-B 6957 Column Listing      SOLVE Slave_GH Using LP From line 396
-E 6958 z_slave_GH
-E 6966 z_slave_GH_ind
-E 6979 p_GH
-B 6994 Model Statistics    SOLVE Slave_GH Using LP From line 396
-B 7015 Solution Report     SOLVE Slave_GH Using LP From line 396
-F 7042 eq_obj_GH_total
-F 7050 eq_obj_GH
-F 7057 eq_min_GH
-G 7059 z_slave_GH
-G 7065 z_slave_GH_ind
-G 7072 p_GH
-B 7086 Equation Listing    SOLVE Slave_Net Using LP From line 398
-D 7087 eq_obj_net
-D 7121 eq_flujo_dc
-D 7166 eq_bal_net
-B 7212 Column Listing      SOLVE Slave_Net Using LP From line 398
-E 7213 z_slave_net
-E 7221 f_dc_linea
-E 7285 ang
-E 7358 inj_fromto
-B 7414 Model Statistics    SOLVE Slave_Net Using LP From line 398
-B 7435 Solution Report     SOLVE Slave_Net Using LP From line 398
-F 7462 eq_obj_net
-F 7470 eq_flujo_dc
-F 7521 eq_bal_net
-G 7560 z_slave_net
-G 7566 f_dc_linea
-G 7617 ang
-G 7661 inj_fromto
-B 7712 E x e c u t i o n
-I 7716 k_count
-I 7719 LB
-I 7722 UB
-I 7725 Gap
-B 7729 Equation Listing    SOLVE Maestro Using LP From line 420
-D 7730 eq_obj_master
-D 7754 eq_cut_GT
-D 7783 eq_cut_GH
-D 7802 eq_cut_net
-B 7815 Column Listing      SOLVE Maestro Using LP From line 420
-E 7816 Z_dual
-E 7824 theta_GT
-E 7891 theta_GH
-E 7910 theta_net
-E 7921 pi_new
-B 7968 Model Statistics    SOLVE Maestro Using LP From line 420
-B 7989 Solution Report     SOLVE Maestro Using LP From line 420
-F 8016 eq_obj_master
-F 8024 eq_cut_GT
-F 8061 eq_cut_GH
-F 8074 eq_cut_net
-G 8078 Z_dual
-G 8084 theta_GT
-G 8097 theta_GH
-G 8104 theta_net
-G 8110 pi_new
-B 8149 E x e c u t i o n
-I 8153 k_count
-I 8157 hist_Gap
-I 8164 hist_LB
-I 8171 hist_UB
-I 8176 hist_profit_GT
-I 8190 hist_p_GT
-I 8204 hist_profit_GH
-I 8212 hist_p_GH
+B 765 Include File Summary
+B 779 E x e c u t i o n
+I 780 b
+I 845 Demanda
+B 872 Equation Listing    SOLVE Slave_GT Using MIP From line 606
+D 873 eq_obj_GT_total
+D 884 eq_obj_GT
+D 910 eq_min_GT
+D 929 eq_max_GT
+B 950 Column Listing      SOLVE Slave_GT Using MIP From line 606
+E 951 z_slave_GT
+E 959 z_slave_GT_ind
+E 1002 p_GT
+E 1053 u_GT
+B 1082 Model Statistics    SOLVE Slave_GT Using MIP From line 606
+B 1103 Solution Report     SOLVE Slave_GT Using MIP From line 606
+F 1139 eq_obj_GT_total
+F 1147 eq_obj_GT
+F 1160 eq_min_GT
+F 1173 eq_max_GT
+G 1181 z_slave_GT
+G 1187 z_slave_GT_ind
+G 1200 p_GT
+G 1213 u_GT
+B 1231 Equation Listing    SOLVE Slave_GH Using LP From line 608
+D 1232 eq_obj_GH_total
+D 1239 eq_obj_GH
+D 1246 eq_min_GH
+B 1255 Column Listing      SOLVE Slave_GH Using LP From line 608
+E 1256 z_slave_GH
+E 1264 z_slave_GH_ind
+E 1277 p_GH
+B 1292 Model Statistics    SOLVE Slave_GH Using LP From line 608
+B 1313 Solution Report     SOLVE Slave_GH Using LP From line 608
+F 1348 eq_obj_GH_total
+F 1356 eq_obj_GH
+F 1363 eq_min_GH
+G 1365 z_slave_GH
+G 1371 z_slave_GH_ind
+G 1378 p_GH
+B 1392 Equation Listing    SOLVE Slave_Net Using LP From line 610
+D 1393 eq_obj_net
+D 1425 eq_flujo_dc
+D 1470 eq_bal_net
+B 1497 Column Listing      SOLVE Slave_Net Using LP From line 610
+E 1498 p_GT
+E 1534 p_GH
+E 1545 z_slave_net
+E 1552 f_dc_linea
+E 1596 ang
+E 1659 inj_fromto
+B 1715 Model Statistics    SOLVE Slave_Net Using LP From line 610
+B 1736 Solution Report     SOLVE Slave_Net Using LP From line 610
+F 1771 eq_obj_net
+F 1779 eq_flujo_dc
+F 1830 eq_bal_net
+G 1869 p_GT
+G 1882 p_GH
+G 1889 z_slave_net
+G 1895 f_dc_linea
+G 1946 ang
+G 1990 inj_fromto
+B 2041 E x e c u t i o n
+I 2045 k_count
+I 2048 LB
+I 2051 UB
+I 2054 Gap
+B 2058 Equation Listing    SOLVE Maestro Using LP From line 632
+D 2059 eq_obj_master
+D 2083 eq_cut_GT
+D 2102 eq_cut_GH
+D 2109 eq_cut_net
+B 2116 Column Listing      SOLVE Maestro Using LP From line 632
+E 2117 Z_dual
+E 2125 theta_GT
+E 2168 theta_GH
+E 2181 theta_net
+E 2189 pi_new
+B 2235 Model Statistics    SOLVE Maestro Using LP From line 632
+B 2256 Solution Report     SOLVE Maestro Using LP From line 632
+F 2283 eq_obj_master
+F 2291 eq_cut_GT
+F 2304 eq_cut_GH
+F 2311 eq_cut_net
+G 2312 Z_dual
+G 2318 theta_GT
+G 2331 theta_GH
+G 2338 theta_net
+G 2344 pi_new
+B 2375 Equation Listing    SOLVE Proyeccion Using QCP From line 647
+D 2376 eq_obj_master
+D 2400 eq_cut_GT
+D 2421 eq_cut_GH
+D 2428 eq_cut_net
+D 2433 eq_min_dist
+D 2464 eq_nivel_rst
+B 2471 Column Listing      SOLVE Proyeccion Using QCP From line 647
+E 2472 Z_dual
+E 2481 theta_GT
+E 2524 theta_GH
+E 2537 theta_net
+E 2545 pi_new
+E 2593 dist
+B 2602 Model Statistics    SOLVE Proyeccion Using QCP From line 647
+B 2625 Solution Report     SOLVE Proyeccion Using QCP From line 647
+F 2667 eq_obj_master
+F 2675 eq_cut_GT
+F 2688 eq_cut_GH
+F 2695 eq_cut_net
+F 2699 eq_min_dist
+F 2700 eq_nivel_rst
+G 2704 Z_dual
+G 2710 theta_GT
+G 2723 theta_GH
+G 2730 theta_net
+G 2736 pi_new
+G 2780 dist
+B 2794 Equation Listing    SOLVE Slave_GT Using MIP From line 606
+D 2795 eq_obj_GT_total
+D 2806 eq_obj_GT
+D 2836 eq_min_GT
+D 2855 eq_max_GT
+B 2876 Column Listing      SOLVE Slave_GT Using MIP From line 606
+E 2877 z_slave_GT
+E 2885 z_slave_GT_ind
+E 2928 p_GT
+E 2979 u_GT
+B 3008 Model Statistics    SOLVE Slave_GT Using MIP From line 606
+B 3029 Solution Report     SOLVE Slave_GT Using MIP From line 606
+F 3065 eq_obj_GT_total
+F 3073 eq_obj_GT
+F 3086 eq_min_GT
+F 3099 eq_max_GT
+G 3107 z_slave_GT
+G 3113 z_slave_GT_ind
+G 3126 p_GT
+G 3139 u_GT
+B 3157 Equation Listing    SOLVE Slave_GH Using LP From line 608
+D 3158 eq_obj_GH_total
+D 3165 eq_obj_GH
+D 3176 eq_min_GH
+B 3185 Column Listing      SOLVE Slave_GH Using LP From line 608
+E 3186 z_slave_GH
+E 3194 z_slave_GH_ind
+E 3207 p_GH
+B 3222 Model Statistics    SOLVE Slave_GH Using LP From line 608
+B 3243 Solution Report     SOLVE Slave_GH Using LP From line 608
+F 3275 eq_obj_GH_total
+F 3283 eq_obj_GH
+F 3290 eq_min_GH
+G 3292 z_slave_GH
+G 3298 z_slave_GH_ind
+G 3305 p_GH
+B 3319 Equation Listing    SOLVE Slave_Net Using LP From line 610
+D 3320 eq_obj_net
+D 3360 eq_flujo_dc
+D 3405 eq_bal_net
+B 3432 Column Listing      SOLVE Slave_Net Using LP From line 610
+E 3433 p_GT
+E 3469 p_GH
+E 3480 z_slave_net
+E 3487 f_dc_linea
+E 3531 ang
+E 3604 inj_fromto
+B 3660 Model Statistics    SOLVE Slave_Net Using LP From line 610
+B 3681 Solution Report     SOLVE Slave_Net Using LP From line 610
+F 3713 eq_obj_net
+F 3721 eq_flujo_dc
+F 3772 eq_bal_net
+G 3811 p_GT
+G 3824 p_GH
+G 3831 z_slave_net
+G 3837 f_dc_linea
+G 3888 ang
+G 3932 inj_fromto
+B 3983 E x e c u t i o n
+I 3987 k_count
+I 3990 LB
+I 3993 UB
+I 3996 Gap
+B 4000 Equation Listing    SOLVE Maestro Using LP From line 632
+D 4001 eq_obj_master
+D 4027 eq_cut_GT
+D 4056 eq_cut_GH
+D 4067 eq_cut_net
+B 4076 Column Listing      SOLVE Maestro Using LP From line 632
+E 4077 Z_dual
+E 4085 theta_GT
+E 4136 theta_GH
+E 4151 theta_net
+E 4160 pi_new
+B 4206 Model Statistics    SOLVE Maestro Using LP From line 632
+B 4227 Solution Report     SOLVE Maestro Using LP From line 632
+F 4254 eq_obj_master
+F 4262 eq_cut_GT
+F 4283 eq_cut_GH
+F 4292 eq_cut_net
+G 4294 Z_dual
+G 4300 theta_GT
+G 4313 theta_GH
+G 4320 theta_net
+G 4326 pi_new
+B 4357 Equation Listing    SOLVE Proyeccion Using QCP From line 647
+D 4358 eq_obj_master
+D 4382 eq_cut_GT
+D 4411 eq_cut_GH
+D 4422 eq_cut_net
+D 4429 eq_min_dist
+D 4468 eq_nivel_rst
+B 4475 Column Listing      SOLVE Proyeccion Using QCP From line 647
+E 4476 Z_dual
+E 4485 theta_GT
+E 4536 theta_GH
+E 4551 theta_net
+E 4560 pi_new
+E 4608 dist
+B 4617 Model Statistics    SOLVE Proyeccion Using QCP From line 647
+B 4640 Solution Report     SOLVE Proyeccion Using QCP From line 647
+F 4682 eq_obj_master
+F 4690 eq_cut_GT
+F 4711 eq_cut_GH
+F 4720 eq_cut_net
+F 4725 eq_min_dist
+F 4726 eq_nivel_rst
+G 4730 Z_dual
+G 4736 theta_GT
+G 4749 theta_GH
+G 4756 theta_net
+G 4762 pi_new
+G 4806 dist
+B 4820 Equation Listing    SOLVE Slave_GT Using MIP From line 606
+D 4821 eq_obj_GT_total
+D 4832 eq_obj_GT
+D 4867 eq_min_GT
+D 4886 eq_max_GT
+B 4907 Column Listing      SOLVE Slave_GT Using MIP From line 606
+E 4908 z_slave_GT
+E 4916 z_slave_GT_ind
+E 4959 p_GT
+E 5010 u_GT
+B 5039 Model Statistics    SOLVE Slave_GT Using MIP From line 606
+B 5060 Solution Report     SOLVE Slave_GT Using MIP From line 606
+F 5096 eq_obj_GT_total
+F 5104 eq_obj_GT
+F 5117 eq_min_GT
+F 5130 eq_max_GT
+G 5138 z_slave_GT
+G 5144 z_slave_GT_ind
+G 5157 p_GT
+G 5170 u_GT
+B 5188 Equation Listing    SOLVE Slave_GH Using LP From line 608
+D 5189 eq_obj_GH_total
+D 5196 eq_obj_GH
+D 5207 eq_min_GH
+B 5216 Column Listing      SOLVE Slave_GH Using LP From line 608
+E 5217 z_slave_GH
+E 5225 z_slave_GH_ind
+E 5238 p_GH
+B 5253 Model Statistics    SOLVE Slave_GH Using LP From line 608
+B 5274 Solution Report     SOLVE Slave_GH Using LP From line 608
+F 5306 eq_obj_GH_total
+F 5314 eq_obj_GH
+F 5321 eq_min_GH
+G 5323 z_slave_GH
+G 5329 z_slave_GH_ind
+G 5336 p_GH
+B 5350 Equation Listing    SOLVE Slave_Net Using LP From line 610
+D 5351 eq_obj_net
+D 5393 eq_flujo_dc
+D 5438 eq_bal_net
+B 5465 Column Listing      SOLVE Slave_Net Using LP From line 610
+E 5466 p_GT
+E 5502 p_GH
+E 5513 z_slave_net
+E 5520 f_dc_linea
+E 5564 ang
+E 5637 inj_fromto
+B 5693 Model Statistics    SOLVE Slave_Net Using LP From line 610
+B 5714 Solution Report     SOLVE Slave_Net Using LP From line 610
+F 5746 eq_obj_net
+F 5754 eq_flujo_dc
+F 5805 eq_bal_net
+G 5844 p_GT
+G 5857 p_GH
+G 5864 z_slave_net
+G 5870 f_dc_linea
+G 5921 ang
+G 5965 inj_fromto
+B 6016 E x e c u t i o n
+I 6020 k_count
+I 6023 LB
+I 6026 UB
+I 6029 Gap
+B 6033 Equation Listing    SOLVE Maestro Using LP From line 632
+D 6034 eq_obj_master
+D 6060 eq_cut_GT
+D 6097 eq_cut_GH
+D 6112 eq_cut_net
+B 6123 Column Listing      SOLVE Maestro Using LP From line 632
+E 6124 Z_dual
+E 6132 theta_GT
+E 6191 theta_GH
+E 6208 theta_net
+E 6218 pi_new
+B 6270 Model Statistics    SOLVE Maestro Using LP From line 632
+B 6291 Solution Report     SOLVE Maestro Using LP From line 632
+F 6318 eq_obj_master
+F 6326 eq_cut_GT
+F 6355 eq_cut_GH
+F 6366 eq_cut_net
+G 6369 Z_dual
+G 6375 theta_GT
+G 6388 theta_GH
+G 6395 theta_net
+G 6401 pi_new
+B 6432 E x e c u t i o n
+I 6436 k_count
+I 6440 hist_Gap
+I 6447 hist_LB
+I 6454 hist_UB
+I 6459 hist_profit_GT
+I 6473 hist_p_GT
+I 6481 hist_profit_GH
+I 6490 hist_p_GH

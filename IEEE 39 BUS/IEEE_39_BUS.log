@@ -1,18 +1,20 @@
 
---- Job IEEE_39_BUS.gms Start 01/25/26 17:49:51 24.1.3 r41464 WEX-VS8 x86/MS Windows
+--- Job IEEE_39_BUS.gms Start 02/01/26 00:03:33 24.1.3 r41464 WEX-VS8 x86/MS Windows
 GAMS 24.1.3   Copyright (C) 1987-2013 GAMS Development. All rights reserved
 Licensee: Gary Goldstein                                 G010614:2121CA-WIN
           Decision Ware, Inc.                                        DC2807
 --- Starting compilation
---- IEEE_39_BUS.gms(497) 3 Mb
---- Starting execution: elapsed 0:00:00.003
---- IEEE_39_BUS.gms(390) 4 Mb
+--- IEEE_39_BUS.gms(7) 2 Mb
+--- .39_FINAL_bus_QUIPU_input.DAT(392) 3 Mb
+--- IEEE_39_BUS.gms(317) 3 Mb
+--- Starting execution: elapsed 0:00:00.004
+--- IEEE_39_BUS.gms(602) 4 Mb
 --- Generating MIP model Slave_GT
---- IEEE_39_BUS.gms(394) 4 Mb
---- LOOPS k = 1
+--- IEEE_39_BUS.gms(606) 4 Mb
+--- LOOPS K = 1
 ---   25 rows  23 columns  47 non-zeroes
 ---   6 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.016
+--- Executing CPLEX: elapsed 0:00:00.017
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
@@ -50,15 +52,15 @@ Absolute gap:            0.000000
 Relative gap:            0.000000
 
 --- Restarting execution
---- IEEE_39_BUS.gms(394) 0 Mb
+--- IEEE_39_BUS.gms(606) 0 Mb
 --- Reading solution for model Slave_GT
---- Executing after solve: elapsed 0:00:00.184
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:00.170
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating LP model Slave_GH
---- IEEE_39_BUS.gms(396) 3 Mb
---- LOOPS k = 1
+--- IEEE_39_BUS.gms(608) 3 Mb
+--- LOOPS K = 1
 ---   5 rows  5 columns  9 non-zeroes
---- Executing CPLEX: elapsed 0:00:00.187
+--- Executing CPLEX: elapsed 0:00:00.174
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
@@ -85,45 +87,49 @@ Cplex Time: 0.06sec (det. 0.00 ticks)
 
 Model has an unbounded ray.
 --- Restarting execution
---- IEEE_39_BUS.gms(396) 0 Mb
+--- IEEE_39_BUS.gms(608) 0 Mb
 --- Reading solution for model Slave_GH
---- Executing after solve: elapsed 0:00:00.309
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:00.294
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating LP model Slave_Net
---- IEEE_39_BUS.gms(398) 3 Mb
---- LOOPS k = 1
----   86 rows  125 columns  309 non-zeroes
---- Executing CPLEX: elapsed 0:00:00.312
+--- IEEE_39_BUS.gms(610) 3 Mb
+--- LOOPS K = 1
+---   86 rows  135 columns  227 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.297
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
 
 Reading data...
 Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 76 rows and 106 columns.
-Reduced LP has 10 rows, 19 columns, and 30 nonzeros.
-Presolve time = 0.00 sec. (0.06 ticks)
+Dual infeasible due to empty column 'inj_fromto(B030)'.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off.
 Initializing dual steep norms . . .
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.04 ticks)
+Dual infeasible or unbounded. Switching to primal to aid diagnosis.
 
 Iteration log . . .
-Iteration:     1   Dual objective     =             0.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.10 ticks)
+Iteration:     1    Scaled infeas =             0.000000
+Switched to devex.
+LP status(2): unbounded
+Cplex Time: 0.05sec (det. 0.03 ticks)
 
-Optimal solution found.
-Objective :           0.000000
-
+Model has an unbounded ray.
 --- Restarting execution
---- IEEE_39_BUS.gms(398) 0 Mb
+--- IEEE_39_BUS.gms(610) 0 Mb
 --- Reading solution for model Slave_Net
---- Executing after solve: elapsed 0:00:00.408
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:00.418
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating LP model Maestro
---- IEEE_39_BUS.gms(420) 3 Mb
---- LOOPS k = 1
----   12 rows  39 columns  52 non-zeroes
---- Executing CPLEX: elapsed 0:00:00.412
+--- IEEE_39_BUS.gms(632) 3 Mb
+--- LOOPS K = 1
+---   12 rows  31 columns  44 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.422
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
@@ -131,27 +137,27 @@ Cplex 12.5.1.0
 Reading data...
 Starting Cplex...
 Tried aggregator 1 time.
-LP Presolve eliminated 12 rows and 39 columns.
+LP Presolve eliminated 12 rows and 31 columns.
 All rows and columns eliminated.
 Presolve time = 0.00 sec. (0.01 ticks)
 LP status(1): optimal
-Cplex Time: 0.02sec (det. 0.01 ticks)
+Cplex Time: 0.00sec (det. 0.01 ticks)
 
 Optimal solution found.
-Objective :    10649100.000000
+Objective :     9972596.000000
 
 --- Restarting execution
---- IEEE_39_BUS.gms(420) 0 Mb
+--- IEEE_39_BUS.gms(632) 0 Mb
 --- Reading solution for model Maestro
---- Executing after solve: elapsed 0:00:00.475
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:00.489
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating QCP model Proyeccion
---- IEEE_39_BUS.gms(435) 5 Mb
---- LOOPS k = 1
----   14 rows  52 columns  93 non-zeroes
+--- IEEE_39_BUS.gms(647) 5 Mb
+--- LOOPS K = 1
+---   14 rows  52 columns  85 non-zeroes
 ---   158 nl-code  39 nl-non-zeroes
---- IEEE_39_BUS.gms(435) 3 Mb
---- Executing CONOPT: elapsed 0:00:00.477
+--- IEEE_39_BUS.gms(647) 3 Mb
+--- Executing CONOPT: elapsed 0:00:00.518
 CONOPT 3         24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
  
  
@@ -162,32 +168,33 @@ CONOPT 3         24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows
  
  
    Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
-      0   0        6.9875100000E+07 (Input point)
+      0   0        6.5995100000E+07 (Input point)
                                 Pre-triangular equations:        0
                                 Post-triangular equations:       1
       1   0        0.0000000000E+00 (After pre-processing)
       2   0        0.0000000000E+00 (After scaling)
  
- ** Feasible solution. Value of objective =    69875100.0000
+ ** Feasible solution. Value of objective =    65995100.0000
  
    Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
-      6   3        5.3639198556E+06 3.8E+06     8 4.0E-01    1 F  T
-     11   4        2.2489266988E+06 2.5E+03    17 1.0E+00    2 F  T
-     15   4        2.2377543230E+06 4.7E-10    29
+      6   3        6.2330080690E+06 1.9E+06     5 4.6E-01    1 F  T
+     11   4        2.4597351502E+06 2.6E+03    15 1.0E+00    4 F  T
+     16   4        2.3928958616E+06 1.8E-01    38 1.0E+00    5 F  T
+     17   4        2.3928958616E+06 1.2E-10    38
  
  ** Optimal solution. Reduced gradient less than tolerance.
  
 --- Restarting execution
---- IEEE_39_BUS.gms(435) 0 Mb
+--- IEEE_39_BUS.gms(647) 0 Mb
 --- Reading solution for model Proyeccion
---- Executing after solve: elapsed 0:00:00.550
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:00.659
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating MIP model Slave_GT
---- IEEE_39_BUS.gms(394) 3 Mb
---- LOOPS k = 2
+--- IEEE_39_BUS.gms(606) 3 Mb
+--- LOOPS K = 2
 ---   25 rows  23 columns  47 non-zeroes
 ---   6 discrete-columns
---- Executing CPLEX: elapsed 0:00:00.553
+--- Executing CPLEX: elapsed 0:00:00.662
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
@@ -217,114 +224,105 @@ Cplex Time: 0.00sec (det. 0.02 ticks)
 
 Proven optimal solution.
 
-MIP Solution:        30498.267445    (0 iterations, 0 nodes)
-Final Solve:         30498.267445    (0 iterations)
+MIP Solution:        16000.000000    (0 iterations, 0 nodes)
+Final Solve:         16000.000000    (0 iterations)
 
-Best possible:       30498.267445
+Best possible:       16000.000000
 Absolute gap:            0.000000
 Relative gap:            0.000000
 
 --- Restarting execution
---- IEEE_39_BUS.gms(394) 0 Mb
+--- IEEE_39_BUS.gms(606) 0 Mb
 --- Reading solution for model Slave_GT
---- Executing after solve: elapsed 0:00:00.678
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:00.782
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating LP model Slave_GH
---- IEEE_39_BUS.gms(396) 3 Mb
---- LOOPS k = 2
+--- IEEE_39_BUS.gms(608) 3 Mb
+--- LOOPS K = 2
 ---   5 rows  5 columns  9 non-zeroes
---- Executing CPLEX: elapsed 0:00:00.681
+--- Executing CPLEX: elapsed 0:00:00.786
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
 
 Reading data...
 Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 5 rows and 5 columns.
-All rows and columns eliminated.
+Dual infeasible due to empty column 'p_GH(H001)'.
 Presolve time = 0.00 sec. (0.00 ticks)
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.01 ticks)
-
-Optimal solution found.
-Objective :        -900.000000
-
---- Restarting execution
---- IEEE_39_BUS.gms(396) 0 Mb
---- Reading solution for model Slave_GH
---- Executing after solve: elapsed 0:00:00.744
---- IEEE_39_BUS.gms(390) 3 Mb
---- Generating LP model Slave_Net
---- IEEE_39_BUS.gms(398) 3 Mb
---- LOOPS k = 2
----   86 rows  125 columns  300 non-zeroes
---- Executing CPLEX: elapsed 0:00:00.778
-
-IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
-Cplex 12.5.1.0
-
-Reading data...
-Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 62 rows and 76 columns.
-Reduced LP has 24 rows, 49 columns, and 72 nonzeros.
-Presolve time = 0.00 sec. (0.05 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.00 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off.
 Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.00 ticks)
 
-Iteration log . . .
-Iteration:     1    Objective     =        101322.284203
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.17 ticks)
-
-Optimal solution found.
-Objective :    -1752794.878775
-
+Model has an unbounded ray.
 --- Restarting execution
---- IEEE_39_BUS.gms(398) 0 Mb
---- Reading solution for model Slave_Net
---- Executing after solve: elapsed 0:00:00.846
---- IEEE_39_BUS.gms(390) 3 Mb
---- Generating LP model Maestro
---- IEEE_39_BUS.gms(420) 3 Mb
---- LOOPS k = 2
----   23 rows  39 columns  73 non-zeroes
---- Executing CPLEX: elapsed 0:00:00.849
+--- IEEE_39_BUS.gms(608) 0 Mb
+--- Reading solution for model Slave_GH
+--- Executing after solve: elapsed 0:00:00.852
+--- IEEE_39_BUS.gms(602) 3 Mb
+--- Generating LP model Slave_Net
+--- IEEE_39_BUS.gms(610) 3 Mb
+--- LOOPS K = 2
+---   86 rows  135 columns  227 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.888
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
 
 Reading data...
 Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 19 rows and 35 columns.
-Reduced LP has 4 rows, 4 columns, and 8 nonzeros.
-Presolve time = -0.00 sec. (0.01 ticks)
-
-Iteration      Dual Objective            In Variable           Out Variable
-     1 sI          247.603200           pi_new(B039)eq_cut_GT(T001.1) slack
-     2 sI          128.000000         theta_GT(T001)           pi_new(B039)
-     3 sI            0.000000         theta_GT(T002)eq_cut_GT(T002.1) slack
-     4        10434522.000000           pi_new(B031)eq_cut_GT(T002.2) slack
-     5        10431602.000000           pi_new(B039)eq_cut_GT(T001.2) slack
-LP status(1): optimal
+Dual infeasible due to empty column 'inj_fromto(B030)'.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.04 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off.
+Using devex.
+LP status(2): unbounded
 Cplex Time: 0.00sec (det. 0.04 ticks)
 
+Model has an unbounded ray.
+--- Restarting execution
+--- IEEE_39_BUS.gms(610) 0 Mb
+--- Reading solution for model Slave_Net
+--- Executing after solve: elapsed 0:00:00.959
+--- IEEE_39_BUS.gms(602) 3 Mb
+--- Generating LP model Maestro
+--- IEEE_39_BUS.gms(632) 3 Mb
+--- LOOPS K = 2
+---   23 rows  31 columns  57 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.963
+
+IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
+Cplex 12.5.1.0
+
+Reading data...
+Starting Cplex...
+Tried aggregator 1 time.
+LP Presolve eliminated 23 rows and 31 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.02 ticks)
+
 Optimal solution found.
-Objective :    10431602.000000
+Objective :     9972596.000000
 
 --- Restarting execution
---- IEEE_39_BUS.gms(420) 0 Mb
+--- IEEE_39_BUS.gms(632) 0 Mb
 --- Reading solution for model Maestro
---- Executing after solve: elapsed 0:00:00.921
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:01.031
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating QCP model Proyeccion
---- IEEE_39_BUS.gms(435) 5 Mb
---- LOOPS k = 2
----   25 rows  52 columns  114 non-zeroes
----   149 nl-code  39 nl-non-zeroes
---- IEEE_39_BUS.gms(435) 3 Mb
---- Executing CONOPT: elapsed 0:00:00.923
+--- IEEE_39_BUS.gms(647) 5 Mb
+--- LOOPS K = 2
+---   25 rows  52 columns  98 non-zeroes
+---   158 nl-code  39 nl-non-zeroes
+--- IEEE_39_BUS.gms(647) 3 Mb
+--- Executing CONOPT: elapsed 0:00:01.033
 CONOPT 3         24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
  
  
@@ -335,31 +333,31 @@ CONOPT 3         24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows
  
  
    Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
-      0   0        4.3655915758E+07 (Input point)
+      0   0        4.3422052884E+07 (Input point)
                                 Pre-triangular equations:        0
                                 Post-triangular equations:       1
       1   0        0.0000000000E+00 (After pre-processing)
       2   0        0.0000000000E+00 (After scaling)
  
- ** Feasible solution. Value of objective =    45893670.0814
+ ** Feasible solution. Value of objective =    45814948.7454
  
    Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
-     11   4        4.8263171768E+06 4.3E-03    28 1.0E+00    3 F  T
-     12   4        4.8263171768E+06 9.9E-10    28
+     11   4        6.1258134056E+06 1.3E-03    38 1.0E+00    4 F  T
+     12   4        6.1258134056E+06 4.0E-09    38
  
  ** Optimal solution. Reduced gradient less than tolerance.
  
 --- Restarting execution
---- IEEE_39_BUS.gms(435) 0 Mb
+--- IEEE_39_BUS.gms(647) 0 Mb
 --- Reading solution for model Proyeccion
---- Executing after solve: elapsed 0:00:01.042
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:01.148
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating MIP model Slave_GT
---- IEEE_39_BUS.gms(394) 3 Mb
---- LOOPS k = 3
----   25 rows  23 columns  45 non-zeroes
+--- IEEE_39_BUS.gms(606) 3 Mb
+--- LOOPS K = 3
+---   25 rows  23 columns  47 non-zeroes
 ---   6 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.045
+--- Executing CPLEX: elapsed 0:00:01.151
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
@@ -369,267 +367,97 @@ Starting Cplex...
 Tried aggregator 1 time.
 MIP Presolve eliminated 25 rows and 23 columns.
 All rows and columns eliminated.
-Presolve time = 0.00 sec. (0.01 ticks)
+Presolve time = -0.00 sec. (0.01 ticks)
 
 Root node processing (before b&c):
-  Real time             =    0.00 sec. (0.02 ticks)
+  Real time             =   -0.00 sec. (0.02 ticks)
 Sequential b&c:
   Real time             =    0.00 sec. (0.00 ticks)
                           ------------
-Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
+Total (root+branch&cut) =   -0.00 sec. (0.02 ticks)
 MIP status(101): integer optimal solution
 Cplex Time: 0.00sec (det. 0.02 ticks)
 Fixing integer variables, and solving final LP...
 Tried aggregator 1 time.
 LP Presolve eliminated 25 rows and 23 columns.
 All rows and columns eliminated.
-Presolve time = 0.00 sec. (0.01 ticks)
+Presolve time = -0.00 sec. (0.01 ticks)
 Fixed MIP status(1): optimal
 Cplex Time: 0.00sec (det. 0.02 ticks)
 
 Proven optimal solution.
 
-MIP Solution:       -33500.000000    (0 iterations, 0 nodes)
-Final Solve:        -33500.000000    (0 iterations)
+MIP Solution:        16000.000000    (0 iterations, 0 nodes)
+Final Solve:         16000.000000    (0 iterations)
 
-Best possible:      -33500.000000
+Best possible:       16000.000000
 Absolute gap:            0.000000
 Relative gap:            0.000000
 
 --- Restarting execution
---- IEEE_39_BUS.gms(394) 0 Mb
+--- IEEE_39_BUS.gms(606) 0 Mb
 --- Reading solution for model Slave_GT
---- Executing after solve: elapsed 0:00:01.165
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:01.271
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating LP model Slave_GH
---- IEEE_39_BUS.gms(396) 3 Mb
---- LOOPS k = 3
+--- IEEE_39_BUS.gms(608) 3 Mb
+--- LOOPS K = 3
 ---   5 rows  5 columns  9 non-zeroes
---- Executing CPLEX: elapsed 0:00:01.167
+--- Executing CPLEX: elapsed 0:00:01.274
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
 
 Reading data...
 Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 5 rows and 5 columns.
-All rows and columns eliminated.
+Dual infeasible due to empty column 'p_GH(H001)'.
 Presolve time = 0.00 sec. (0.00 ticks)
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.01 ticks)
-
-Optimal solution found.
-Objective :        -900.000000
-
---- Restarting execution
---- IEEE_39_BUS.gms(396) 0 Mb
---- Reading solution for model Slave_GH
---- Executing after solve: elapsed 0:00:01.231
---- IEEE_39_BUS.gms(390) 3 Mb
---- Generating LP model Slave_Net
---- IEEE_39_BUS.gms(398) 3 Mb
---- LOOPS k = 3
----   86 rows  125 columns  301 non-zeroes
---- Executing CPLEX: elapsed 0:00:01.264
-
-IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
-Cplex 12.5.1.0
-
-Reading data...
-Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 62 rows and 76 columns.
-Reduced LP has 24 rows, 49 columns, and 72 nonzeros.
-Presolve time = 0.00 sec. (0.05 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.00 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off.
 Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.00 ticks)
 
-Iteration log . . .
-Iteration:     1    Objective     =      -4305482.953231
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.15 ticks)
-
-Optimal solution found.
-Objective :    -4305482.953231
-
+Model has an unbounded ray.
 --- Restarting execution
---- IEEE_39_BUS.gms(398) 0 Mb
---- Reading solution for model Slave_Net
---- Executing after solve: elapsed 0:00:01.331
---- IEEE_39_BUS.gms(390) 3 Mb
---- Generating LP model Maestro
---- IEEE_39_BUS.gms(420) 3 Mb
---- LOOPS k = 3
----   34 rows  39 columns  94 non-zeroes
---- Executing CPLEX: elapsed 0:00:01.334
-
-IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
-Cplex 12.5.1.0
-
-Reading data...
-Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 30 rows and 35 columns.
-Reduced LP has 4 rows, 4 columns, and 8 nonzeros.
-Presolve time = 0.00 sec. (0.02 ticks)
-
-Iteration log . . .
-Iteration:     1   Scaled dual infeas =           247.603200
-Iteration:     4   Dual objective     =      10434522.000000
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.06 ticks)
-
-Optimal solution found.
-Objective :    10431602.000000
-
---- Restarting execution
---- IEEE_39_BUS.gms(420) 0 Mb
---- Reading solution for model Maestro
---- Executing after solve: elapsed 0:00:01.410
---- IEEE_39_BUS.gms(390) 3 Mb
---- Generating QCP model Proyeccion
---- IEEE_39_BUS.gms(435) 5 Mb
---- LOOPS k = 3
----   36 rows  52 columns  135 non-zeroes
----   150 nl-code  39 nl-non-zeroes
---- IEEE_39_BUS.gms(435) 3 Mb
---- Executing CONOPT: elapsed 0:00:01.412
-CONOPT 3         24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
- 
- 
-    C O N O P T 3   version 3.15L
-    Copyright (C)   ARKI Consulting and Development A/S
-                    Bagsvaerdvej 246 A
-                    DK-2880 Bagsvaerd, Denmark
- 
- 
-   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
-      0   0        1.9513617762E+07 (Input point)
-                                Pre-triangular equations:        0
-                                Post-triangular equations:       1
-      1   0        0.0000000000E+00 (After pre-processing)
-      2   0        0.0000000000E+00 (After scaling)
- 
- ** Feasible solution. Value of objective =    24339934.9391
- 
-   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
-     11   4        1.5606945319E+07 1.6E-09    19
- 
- ** Optimal solution. Reduced gradient less than tolerance.
- 
---- Restarting execution
---- IEEE_39_BUS.gms(435) 0 Mb
---- Reading solution for model Proyeccion
---- Executing after solve: elapsed 0:00:01.530
---- IEEE_39_BUS.gms(390) 3 Mb
---- Generating MIP model Slave_GT
---- IEEE_39_BUS.gms(394) 3 Mb
---- LOOPS k = 4
----   25 rows  23 columns  45 non-zeroes
----   6 discrete-columns
---- Executing CPLEX: elapsed 0:00:01.533
-
-IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
-Cplex 12.5.1.0
-
-Reading data...
-Starting Cplex...
-Tried aggregator 1 time.
-MIP Presolve eliminated 25 rows and 23 columns.
-All rows and columns eliminated.
-Presolve time = 0.00 sec. (0.01 ticks)
-
-Root node processing (before b&c):
-  Real time             =    0.00 sec. (0.02 ticks)
-Sequential b&c:
-  Real time             =    0.00 sec. (0.00 ticks)
-                          ------------
-Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
-MIP status(101): integer optimal solution
-Cplex Time: 0.00sec (det. 0.02 ticks)
-Fixing integer variables, and solving final LP...
-Tried aggregator 1 time.
-LP Presolve eliminated 25 rows and 23 columns.
-All rows and columns eliminated.
-Presolve time = 0.00 sec. (0.01 ticks)
-Fixed MIP status(1): optimal
-Cplex Time: 0.00sec (det. 0.02 ticks)
-
-Proven optimal solution.
-
-MIP Solution:       -33500.000000    (0 iterations, 0 nodes)
-Final Solve:        -33500.000000    (0 iterations)
-
-Best possible:      -33500.000000
-Absolute gap:            0.000000
-Relative gap:            0.000000
-
---- Restarting execution
---- IEEE_39_BUS.gms(394) 0 Mb
---- Reading solution for model Slave_GT
---- Executing after solve: elapsed 0:00:01.652
---- IEEE_39_BUS.gms(390) 3 Mb
---- Generating LP model Slave_GH
---- IEEE_39_BUS.gms(396) 3 Mb
---- LOOPS k = 4
----   5 rows  5 columns  9 non-zeroes
---- Executing CPLEX: elapsed 0:00:01.654
-
-IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
-Cplex 12.5.1.0
-
-Reading data...
-Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 5 rows and 5 columns.
-All rows and columns eliminated.
-Presolve time = 0.00 sec. (0.00 ticks)
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.01 ticks)
-
-Optimal solution found.
-Objective :        -900.000000
-
---- Restarting execution
---- IEEE_39_BUS.gms(396) 0 Mb
+--- IEEE_39_BUS.gms(608) 0 Mb
 --- Reading solution for model Slave_GH
---- Executing after solve: elapsed 0:00:01.728
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:01.337
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating LP model Slave_Net
---- IEEE_39_BUS.gms(398) 3 Mb
---- LOOPS k = 4
----   86 rows  125 columns  301 non-zeroes
---- Executing CPLEX: elapsed 0:00:01.756
+--- IEEE_39_BUS.gms(610) 3 Mb
+--- LOOPS K = 3
+---   86 rows  135 columns  227 non-zeroes
+--- Executing CPLEX: elapsed 0:00:01.374
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
 
 Reading data...
 Starting Cplex...
-Tried aggregator 1 time.
-LP Presolve eliminated 62 rows and 76 columns.
-Reduced LP has 24 rows, 49 columns, and 72 nonzeros.
-Presolve time = 0.00 sec. (0.05 ticks)
+Dual infeasible due to empty column 'inj_fromto(B030)'.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.04 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off.
 Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.04 ticks)
 
-Iteration log . . .
-Iteration:     1    Objective     =      -8392045.161312
-LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.15 ticks)
-
-Optimal solution found.
-Objective :    -8415682.711091
-
+Model has an unbounded ray.
 --- Restarting execution
---- IEEE_39_BUS.gms(398) 0 Mb
+--- IEEE_39_BUS.gms(610) 0 Mb
 --- Reading solution for model Slave_Net
---- Executing after solve: elapsed 0:00:01.834
---- IEEE_39_BUS.gms(390) 3 Mb
+--- Executing after solve: elapsed 0:00:01.439
+--- IEEE_39_BUS.gms(602) 3 Mb
 --- Generating LP model Maestro
---- IEEE_39_BUS.gms(420) 3 Mb
---- LOOPS k = 4
----   45 rows  39 columns  115 non-zeroes
---- Executing CPLEX: elapsed 0:00:01.839
+--- IEEE_39_BUS.gms(632) 3 Mb
+--- LOOPS K = 3
+---   34 rows  31 columns  70 non-zeroes
+--- Executing CPLEX: elapsed 0:00:01.442
 
 IBM ILOG CPLEX   24.1.3 r41464 Released Jul 26, 2013 VS8 x86/MS Windows       
 Cplex 12.5.1.0
@@ -637,26 +465,22 @@ Cplex 12.5.1.0
 Reading data...
 Starting Cplex...
 Tried aggregator 1 time.
-LP Presolve eliminated 41 rows and 35 columns.
-Reduced LP has 4 rows, 4 columns, and 8 nonzeros.
-Presolve time = -0.00 sec. (0.02 ticks)
-
-Iteration log . . .
-Iteration:     1   Scaled dual infeas =           247.603200
-Iteration:     4   Dual objective     =      10434522.000000
+LP Presolve eliminated 34 rows and 31 columns.
+All rows and columns eliminated.
+Presolve time = -0.00 sec. (0.01 ticks)
 LP status(1): optimal
-Cplex Time: 0.00sec (det. 0.08 ticks)
+Cplex Time: 0.00sec (det. 0.03 ticks)
 
 Optimal solution found.
-Objective :    10431602.000000
+Objective :     9972596.000000
 
 --- Restarting execution
---- IEEE_39_BUS.gms(420) 0 Mb
+--- IEEE_39_BUS.gms(632) 0 Mb
 --- Reading solution for model Maestro
---- Executing after solve: elapsed 0:00:01.919
---- IEEE_39_BUS.gms(495) 3 Mb
+--- Executing after solve: elapsed 0:00:01.512
+--- IEEE_39_BUS.gms(707) 3 Mb
 --- Putfile f_gen C:\nconvex-gams\IEEE 39 BUS\Resultados_Generacion.csv
 --- Putfile f_price C:\nconvex-gams\IEEE 39 BUS\Resultados_Precios.csv
 --- Putfile f_conv C:\nconvex-gams\IEEE 39 BUS\Historial_Convergencia.csv
 *** Status: Normal completion
---- Job IEEE_39_BUS.gms Stop 01/25/26 17:49:53 elapsed 0:00:01.922
+--- Job IEEE_39_BUS.gms Stop 02/01/26 00:03:35 elapsed 0:00:01.514

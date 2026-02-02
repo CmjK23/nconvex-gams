@@ -1,0 +1,30 @@
+[PROJECT]
+
+[RP:UNTITLED_1]
+1=
+
+[RP:APLICATIVO QUIPU_V3.1_EXTRANET]
+1=
+
+[RP:IEEE_39_BUS]
+1=
+
+[RP:IEEE_9_BUS]
+1=
+
+[MRUFILES]
+1=C:\nconvex-gams\IEEE 9 BUS\IEEE_9_BUS.gms
+2=C:\nconvex-gams\IEEE 39 BUS\IEEE_9_BUS.lst
+3=C:\nconvex-gams\IEEE 39 BUS\Untitled_1.gms
+4=C:\nconvex-gams\IEEE 39 BUS\Untitled_1.lst
+
+[OPENWINDOW_1]
+FILE0=C:\nconvex-gams\IEEE 39 BUS\IEEE_39_BUS.gms
+FILE1=C:\nconvex-gams\IEEE 39 BUS\IEEE_39_BUS.lst
+FILE2=D:\Costos_no_convexos_modelos\quipu_original\Aplicativo QUIPU_V3.1_extranet.gms
+FILE3=D:\Costos_no_convexos_modelos\quipu_original\Aplicativo QUIPU_V3.1_extranet.gms
+MAXIM=0
+TOP=0
+LEFT=0
+HEIGHT=716
+WIDTH=768

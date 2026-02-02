@@ -4,177 +4,15 @@ option limcol=10;
 option limrow=10;
 option decimals=8;
 
+$INCLUDE C:\nconvex-gams\IEEE 9 BUS\IEEE9bus_input_FINAL.DAT
 SET
-    i             "generador"   /1*10/
-    NB            "nodo"        /B001*B039/
-    ENL           "Linea"       /E001*E046/
-    k             "Iteraciones" /1*50/
-    Cut(k)        "Cortes generados"
-;
-
+     K         "Iteraciones" /1*50/
+     cut(k)    "cortes generados";
 alias (NB,j);
-
 positive variable
 prac(NB);
 scalar
 crac /100000000/;
-
-*Parque Generador
-*********************************************
-* Termica
-*********************************************
-SET  GT  /
-        T001 G1_InterconexionUSA_1000MW
-        T002 G2_Slack_700MW
-        T003 G3_Steam_800MW
-        T004 G4_Steam_800MW
-        T005 G5_Steam_300MW
-        T006 G6_Steam_800MW
-        T007 G7_Steam_700MW
-        T008 G8_Steam_700MW
-/;
-
-SET  PtBus(GT,NB) /
-        T001.B039
-        T002.B031
-        T003.B032
-        T004.B033
-        T005.B034
-        T006.B035
-        T007.B036
-        T008.B037
-/;
-
-TABLE PtData(GT,*)
-                Pgen      Pmin      Pmax    Costo1    CI1       CI2     Pmax1     Pmax2   Forzada   Sist  Calif
-        T001 1000.000  800.000  1250.000  5000.00   20.00     20.00   1250.000  1250.000    no        1     101
-        T002  520.810  100.000   700.000  7000.00   35.00     35.00    700.000   700.000    no        1     102
-        T003  650.000  250.000   800.000  8000.00   40.00     40.00    800.000   800.000    no        1     103
-        T004  632.000  250.000   800.000  8000.00   40.00     40.00    800.000   800.000    no        1     104
-        T005  508.000  100.000   300.000  9000.00   45.00     45.00    300.000   300.000    no        1     105
-        T006  650.000  250.000   800.000  8000.00   40.00     40.00    800.000   800.000    no        1     106
-        T007  560.000  200.000   700.000  8000.00   40.00     40.00    700.000   700.000    no        1     107
-        T008  540.000  200.000   700.000  8000.00   40.00     40.00    700.000   700.000    no        1     108
-;
-*********************************************
-* Hidraulica
-*********************************************
-SET  GH  /
-           H001 G9_Hydro_1000MW
-           H002 G10_Hydro_1000MW
-/;
-
-SET  PhBus(GH,NB) /
-        H001.B038
-        H002.B030
-/;
-
-TABLE PhData(GH,*)
-                Pgen      Pmin      Pmax      CI        Forzada   Sist    Cmgh
-        H001   830.000  350.000  1000.000   2.00        no        1      yes
-        H002   250.000  100.000  1000.000   2.00        no        1      yes
-;
-
-TABLE  FData(ENL,*)
-        R0       X0        G0       Pmax    Cong  Sist
-E001    0.000000  0.1305  0.0000   300.0    no     1
-E002    0.000000  0.1305  0.0000   300.0    no     1
-E003    0.000000  0.1750  0.0000   700.0    no     1
-E004    0.000000  0.1600  0.0000   800.0    no     1
-E005    0.000056  0.1136  0.0000   800.0    no     1
-E006    0.000054  0.1080  0.0000   600.0    no     1
-E007    0.000000  0.1144  0.0000   800.0    no     1
-E008    0.000035  0.1904  0.0000   700.0    no     1
-E009    0.000042  0.1624  0.0000   700.0    no     1
-E010    0.000000  0.1810  0.0000  1000.0    no     1
-E011    0.000080  0.1560  0.0000  1000.0    no     1
-E012    0.000070  0.1380  0.0000  1000.0    no     1
-E013    0.0035    0.0411  0.0000   300.0    no     1
-E014    0.0010    0.0250  0.0000   300.0    no     1
-E015    0.0013    0.0151  0.0000   300.0    no     1
-E016    0.0070    0.0086  0.0000   300.0    no     1
-E017    0.0013    0.0213  0.0000   300.0    no     1
-E018    0.0011    0.0133  0.0000   300.0    no     1
-E019    0.0008    0.0128  0.0000   300.0    no     1
-E020    0.0008    0.0129  0.0000   300.0    no     1
-E021    0.0002    0.0026  0.0000   300.0    no     1
-E022    0.0008    0.0112  0.0000   300.0    no     1
-E023    0.0006    0.0092  0.0000   300.0    no     1
-E024    0.0007    0.0082  0.0000   300.0    no     1
-E025    0.0004    0.0046  0.0000   300.0    no     1
-E026    0.0023    0.0363  0.0000   300.0    no     1
-E027    0.0010    0.0250  0.0000   300.0    no     1
-E028    0.0004    0.0043  0.0000   300.0    no     1
-E029    0.0004    0.0043  0.0000   300.0    no     1
-E030    0.0009    0.0101  0.0000   300.0    no     1
-E031    0.0018    0.0217  0.0000   300.0    no     1
-E032    0.0009    0.0094  0.0000   300.0    no     1
-E033    0.0007    0.0089  0.0000   300.0    no     1
-E034    0.0016    0.0195  0.0000   300.0    no     1
-E035    0.0008    0.0135  0.0000   300.0    no     1
-E036    0.0003    0.0059  0.0000   300.0    no     1
-E037    0.0007    0.0082  0.0000   300.0    no     1
-E038    0.0013    0.0173  0.0000   300.0    no     1
-E039    0.0008    0.0140  0.0000   300.0    no     1
-E040    0.0006    0.0096  0.0000   300.0    no     1
-E041    0.0022    0.0350  0.0000   300.0    no     1
-E042    0.0032    0.0323  0.0000   300.0    no     1
-E043    0.0014    0.0147  0.0000   300.0    no     1
-E044    0.0043    0.0474  0.0000   300.0    no     1
-E045    0.0057    0.0625  0.0000   300.0    no     1
-E046    0.0014    0.0151  0.0000   300.0    no     1
-;
-
-*Conexion de la linea
-SET Fbus(ENL,NB,NB)
-/
-        E001.B013.B012
-        E002.B011.B012
-        E003.B006.B031
-        E004.B010.B032
-        E005.B019.B033
-        E006.B020.B034
-        E007.B022.B035
-        E008.B023.B036
-        E009.B025.B037
-        E010.B002.B030
-        E011.B029.B038
-        E012.B019.B020
-        E013.B001.B002
-        E014.B001.B039
-        E015.B002.B003
-        E016.B002.B025
-        E017.B003.B004
-        E018.B003.B018
-        E019.B004.B005
-        E020.B004.B014
-        E021.B005.B006
-        E022.B005.B008
-        E023.B006.B007
-        E024.B006.B011
-        E025.B007.B008
-        E026.B008.B009
-        E027.B009.B039
-        E028.B010.B011
-        E029.B010.B013
-        E030.B013.B014
-        E031.B014.B015
-        E032.B015.B016
-        E033.B016.B017
-        E034.B016.B019
-        E035.B016.B021
-        E036.B016.B024
-        E037.B017.B018
-        E038.B017.B027
-        E039.B021.B022
-        E040.B022.B023
-        E041.B023.B024
-        E042.B025.B026
-        E043.B026.B027
-        E044.B026.B028
-        E045.B026.B029
-        E046.B028.B029
-  /;
 
 PARAMETER b(NB,NB);
 
@@ -183,34 +21,12 @@ b(NB,j) = sum(ENL$Fbus(ENL,NB,j),
          FData(ENL,'X0')*FData(ENL,'X0')));
 
 DISPLAY b;
-
-TABLE demanda(NB,*)
-                Pc
-        B003  322.00
-        B004  500.00
-        B007  233.80
-        B008  522.00
-        B012  207.50
-        B015  320.00
-        B016  329.00
-        B018  158.00
-        B020  628.00
-        B021  274.00
-        B023  247.50
-        B024  308.60
-        B025  224.00
-        B026  139.00
-        B027  281.00
-        B028  206.00
-        B029  283.50
-        B031  209.20
-        B039 1104.00
 DISPLAY demanda;
 PARAMETER Loss(ENL);
 Loss(ENL)=0;
 
 *==============================================================================*
-*--------------------PARAMETROS DE CONTROL DEL ALGORITMO-----------------------
+*--------------------PARAMETROS DE CONTROL DEL ALGORITMO------------------------
 *==============================================================================*
 SCALAR
        alpha     "Parametro de nivel (step size parameter)(sensibilidad)" /0.2/
@@ -247,7 +63,7 @@ pi_up(NB) = 9000;
 Cut(k) = no;
 
 *==============================================================================*
-*---------------------------------Generacion-----------------------------------
+*---------------------------------GENERACIÓN------------------------------------
 *==============================================================================*
 VARIABLES
           z_slave_GT           "Beneficio de los Generadores Termico (Ecuacion 2a) "
@@ -296,7 +112,7 @@ eq_max_GH(GH)..
 eq_min_GH(GH)..
     P_GH(GH) =g= PhData(GH,'Pmin');
 *==============================================================================*
-*---------------------------------RED -----------------------------------
+*-----------------------------------RED-----------------------------------------
 *==============================================================================*
 VARIABLE
          z_slave_net        "Renta de Congestion Total de la Red"
@@ -331,7 +147,7 @@ Model Slave_Net /eq_obj_net, eq_flujo_dc, eq_bal_net/;
 Slave_GT.optcr = 0;
 
 * ==============================================================================
-*                        PROBLEMA MAESTRO Y PROYECCIÓN
+* ------------------PROBLEMA MAESTRO Y PROYECCIÓN-------------------------------
 * ==============================================================================
 
 
@@ -444,3 +260,54 @@ Display "Historial del Lowwer Bound ", hist_LB;
 Display "Historial del Upper  Bound ", hist_UB;
 Display hist_profit_GT,hist_p_GT,hist_profit_GH,hist_p_GH;
 
+* Configuración de archivo para Generacion
+FILE f_gen /Resultados_Generacion.csv/;
+* .pc = 5 indica formato separado por comas (CSV estándar)
+f_gen.pc = 5;
+* .pw = 10000 indica el ancho de pagina (para evitar que corte lineas)
+f_gen.pw = 10000;
+
+PUT f_gen;
+* Cabecera del CSV
+PUT 'Tipo,Generador,Nodo,Potencia_MW,Estado_Commitment,Precio_Nodal_USD' /;
+
+* 1. Exportar Generadores Térmicos
+LOOP((GT, NB)$PtBus(GT,NB),
+    PUT 'Termica', GT.tl, NB.tl, p_GT.l(GT):0:4, u_GT.l(GT):0:0, pi_iter(NB):0:2 /;
+);
+
+* 2. Exportar Generadores Hidráulicos
+LOOP((GH, NB)$PhBus(GH,NB),
+    PUT 'Hidraulica', GH.tl, NB.tl, p_GH.l(GH):0:4, '1', pi_iter(NB):0:2 /;
+);
+
+
+* ------------------------------------------------------------------------------
+
+* Configuración de archivo para Precios Nodales
+FILE f_price /Resultados_Precios.csv/;
+f_price.pc = 5;
+f_price.pw = 10000;
+
+PUT f_price;
+PUT 'Nodo,Precio_Final' /;
+
+LOOP(NB,
+    PUT NB.tl, pi_iter(NB):0:4 /;
+);
+
+
+* ------------------------------------------------------------------------------
+
+*Configuración de archivo para Historial de Convergencia
+FILE f_conv /Historial_Convergencia.csv/;
+f_conv.pc = 5;
+f_conv.pw = 10000;
+
+PUT f_conv;
+PUT 'Iteracion,Lower_Bound,Upper_Bound,Gap' /;
+
+*Solo iteramos hasta k_count (las iteraciones que realmente ocurrieron)
+LOOP(k$(ord(k) <= k_count),
+    PUT k.tl, hist_LB(k):0:4, hist_UB(k):0:4, hist_Gap(k):0:6 /;
+);

@@ -1,0 +1,4 @@
+"Tipo,Generador,Nodo,Potencia_MW,Estado_Commitment,Precio_Nodal_USD"
+"Termica","T001","B002",50.00,0.00,0.00
+"Termica","T002","B003",30.00,0.00,0.00
+"Hidraulica","H001","B001",20.00,"1",0.00

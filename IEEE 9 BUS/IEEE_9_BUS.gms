@@ -1,83 +1,18 @@
-$title Despacho termico IEEE BUS 9 CON EL METODO DE NIVEL (MULTICORTES)
+$title Despacho termico IEEE BUS 39 CON EL METODO DE NIVEL (MULTICORTES)
 
 option limcol=10;
 option limrow=10;
 option decimals=8;
 
+$INCLUDE C:\nconvex-gams\IEEE 9 BUS\IEEE9bus_input_FINAL.DAT
 SET
-    i             "generador"   /1*5/
-    NB            "nodo"        /B001*B009/
-    ENL           "Linea"       /E001*E009/
-    k             "Iteraciones" /1*50/
-    Cut(k)        "Cortes generados"
-;
-
+     K         "Iteraciones" /1*50/
+     cut(k)    "cortes generados";
 alias (NB,j);
-
 positive variable
 prac(NB);
 scalar
 crac /100000000/;
-
-*Parque Generador
-*********************************************
-* Termica
-*********************************************
-SET  GT  /
-        T001 G2Steam 18       TG-1
-        T002 G3Steam 13.8     TG-2
-/;
-
-SET  PtBus(GT,NB) /
-        T001.B002
-        T002.B003
-/;
-
-TABLE PtData(GT,*)
-                Pgen      Pmin      Pmax    Costo1    CI1       CI2     Pmax1     Pmax2   Forzada   Sist  Calif
-        T001  163.000   50.000   192.000   8000.00   50.00     50.00    192.000   192.000     no      1     101
-        T002   85.000   30.000   128.000   9000.00   60.00     60.00    128.000   128.000     no      1     102
-;
-*********************************************
-* Hidraulica
-*********************************************
-SET  GH  /
-        H001 G1Hydro 16.5     G-1
-/;
-
-SET  PhBus(GH,NB) /
-        H001.B001
-/;
-
-TABLE PhData(GH,*)
-                Pgen      Pmin      Pmax      CI        Forzada   Sist    Cmgh
-        H001   71.600   20.000   247.500   2.00         no        1      yes
-;
-
-TABLE  FData(ENL,*)
-                  R0       X0         G0      Pmax     Cong  Sist
-        E001    0.000000  0.0576   0.00000  0250.000    no     1
-        E002    0.000000  0.0625   0.00000  0200.000    no     1
-        E003    0.000000  0.0586   0.00000  0150.000    no     1
-        E004    0.010000  0.0850   0.00000  0300.000    no     1
-        E005    0.017000  0.0920   0.00000  0300.000    no     1
-        E006    0.032000  0.1610   0.00000  0300.000    no     1
-        E007    0.039000  0.1700   0.00000  0300.000    no     1
-        E008    0.008500  0.0720   0.00000  0300.000    no     1
-        E009    0.011900  0.1008   0.00000  0300.000    no     1
-;
-
-*Conexion de la linea
-SET Fbus(ENL,NB,NB)
-/    E001. B004.B001
-     E002. B004.B005
-     E003. B006.B005
-     E004. B003.B006
-     E005. B006.B007
-     E006. B007.B008
-     E007. B008.B002
-     E008. B008.B009
-     E009. B009.B004  /;
 
 PARAMETER b(NB,NB);
 
@@ -86,20 +21,12 @@ b(NB,j) = sum(ENL$Fbus(ENL,NB,j),
          FData(ENL,'X0')*FData(ENL,'X0')));
 
 DISPLAY b;
-
-TABLE demanda(NB,*)
-         Pc
-B002     0.8000
-B005     0.7068
-B007     0.7854
-B009     0.9817
-;
 DISPLAY demanda;
 PARAMETER Loss(ENL);
 Loss(ENL)=0;
 
 *==============================================================================*
-*--------------------PARAMETROS DE CONTROL DEL ALGORITMO-----------------------
+*--------------------PARAMETROS DE CONTROL DEL ALGORITMO------------------------
 *==============================================================================*
 SCALAR
        alpha     "Parametro de nivel (step size parameter)(sensibilidad)" /0.2/
@@ -136,7 +63,7 @@ pi_up(NB) = 9000;
 Cut(k) = no;
 
 *==============================================================================*
-*---------------------------------Generacion-----------------------------------
+*---------------------------------GENERACIÓN------------------------------------
 *==============================================================================*
 VARIABLES
           z_slave_GT           "Beneficio de los Generadores Termico (Ecuacion 2a) "
@@ -185,7 +112,7 @@ eq_max_GH(GH)..
 eq_min_GH(GH)..
     P_GH(GH) =g= PhData(GH,'Pmin');
 *==============================================================================*
-*---------------------------------RED -----------------------------------
+*-----------------------------------RED-----------------------------------------
 *==============================================================================*
 VARIABLE
          z_slave_net        "Renta de Congestion Total de la Red"
@@ -220,7 +147,7 @@ Model Slave_Net /eq_obj_net, eq_flujo_dc, eq_bal_net/;
 Slave_GT.optcr = 0;
 
 * ==============================================================================
-*                        PROBLEMA MAESTRO Y PROYECCIÓN
+* ------------------PROBLEMA MAESTRO Y PROYECCIÓN-------------------------------
 * ==============================================================================
 
 
@@ -333,3 +260,53 @@ Display "Historial del Lowwer Bound ", hist_LB;
 Display "Historial del Upper  Bound ", hist_UB;
 Display hist_profit_GT,hist_p_GT,hist_profit_GH,hist_p_GH;
 
+* Configuración de archivo para Generacion
+FILE f_gen /Resultados_Generacion.csv/;
+* .pc = 5 indica formato separado por comas (CSV estándar)
+f_gen.pc = 5;
+* .pw = 10000 indica el ancho de pagina (para evitar que corte lineas)
+f_gen.pw = 10000;
+
+PUT f_gen;
+* Cabecera del CSV
+PUT 'Tipo,Generador,Nodo,Potencia_MW,Estado_Commitment,Precio_Nodal_USD' /;
+
+* 1. Exportar Generadores Térmicos
+LOOP((GT, NB)$PtBus(GT,NB),
+    PUT 'Termica', GT.tl, NB.tl, p_GT.l(GT), u_GT.l(GT), pi_iter(NB) /;
+);
+
+* 2. Exportar Generadores Hidráulicos
+LOOP((GH, NB)$PhBus(GH,NB),
+    PUT 'Hidraulica', GH.tl, NB.tl, p_GH.l(GH), '1', pi_iter(NB) /;
+);
+
+
+* ------------------------------------------------------------------------------
+
+* Configuración de archivo para Precios Nodales
+FILE f_price /Resultados_Precios.csv/;
+f_price.pc = 5;
+f_price.pw = 10000;
+
+PUT f_price;
+PUT 'Nodo,Precio_Final' /;
+
+LOOP(NB,
+    PUT NB.tl, pi_iter(NB) /;
+);
+
+* ------------------------------------------------------------------------------
+
+*Configuración de archivo para Historial de Convergencia
+FILE f_conv /Historial_Convergencia.csv/;
+f_conv.pc = 5;
+f_conv.pw = 10000;
+
+PUT f_conv;
+PUT 'Iteracion,Lower_Bound,Upper_Bound,Gap' /;
+
+*Solo iteramos hasta k_count (las iteraciones que realmente ocurrieron)
+LOOP(k$(ord(k) <= k_count),
+    PUT k.tl, hist_LB(k), hist_UB(k), hist_Gap(k) /;
+);
