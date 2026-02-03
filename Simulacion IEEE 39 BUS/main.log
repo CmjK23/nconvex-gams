@@ -1,0 +1,892 @@
+--- Job main.gms Start 02/03/26 02:26:24 24.9.2 r64480 WEX-WEI x86 64bit/MS Windows
+GAMS 24.9.2   Copyright (C) 1987-2017 GAMS Development. All rights reserved
+Licensee: GAMS Development Corporation, USA              G871201/0000CA-ANY
+          Free Demo, +1 202-342-0180, support@gams.com, www.gams.com DC0000
+--- Starting compilation
+--- main.gms(6) 2 Mb
+--- .Inputs/Input_47.DAT(392) 3 Mb
+--- main.gms(321) 3 Mb
+--- Starting execution: elapsed 0:00:00.011
+--- main.gms(606) 4 Mb
+--- Generating MIP model Slave_GT
+--- main.gms(610) 4 Mb
+--- LOOPS K = 1
+---   25 rows  23 columns  47 non-zeroes
+---   6 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.011
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+MIP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.02 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Fixing integer variables, and solving final LP...
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+LP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.00sec (det. 0.02 ticks)
+
+Proven optimal solution.
+
+MIP Solution:        16000.000000    (0 iterations, 0 nodes)
+Final Solve:         16000.000000    (0 iterations)
+
+Best possible:       16000.000000
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+--- Restarting execution
+--- main.gms(610) 2 Mb
+--- Reading solution for model Slave_GT
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_GH
+--- main.gms(612) 3 Mb
+--- LOOPS K = 1
+---   5 rows  5 columns  9 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.091
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'p_GH(H001)'.
+Presolve time = 0.00 sec. (0.00 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.00 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+
+Iteration           Objective            In Variable           Out Variable
+     1 sI          100.000000             p_GH(H001)  eq_min_GH(H001) slack
+     2 sI            0.000000             p_GH(H002)  eq_min_GH(H002) slack
+Switched to steepest-edge.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.00 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(612) 2 Mb
+--- Reading solution for model Slave_GH
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_Net
+--- main.gms(614) 3 Mb
+--- LOOPS K = 1
+---   86 rows  135 columns  227 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.155
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'inj_fromto(B030)'.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.01 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+
+Iteration log . . .
+Iteration:     1    Scaled infeas =             0.000000
+Switched to devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.05 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(614) 2 Mb
+--- Reading solution for model Slave_Net
+--- main.gms(606) 3 Mb
+--- Generating LP model Maestro
+--- main.gms(636) 3 Mb
+--- LOOPS K = 1
+---   12 rows  31 columns  42 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.217
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Tried aggregator 1 time.
+LP Presolve eliminated 12 rows and 31 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.01 ticks)
+
+Optimal solution found.
+Objective :     9197220.000000
+
+--- Restarting execution
+--- main.gms(636) 2 Mb
+--- Reading solution for model Maestro
+--- main.gms(606) 3 Mb
+--- Generating QCP model Proyeccion
+--- main.gms(651) 5 Mb
+--- LOOPS K = 1
+---   14 rows  52 columns  83 non-zeroes
+---   158 nl-code  39 nl-non-zeroes
+--- main.gms(651) 3 Mb
+--- Executing CONOPT: elapsed 0:00:00.297
+CONOPT 3         24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+ 
+ 
+    C O N O P T 3   version 3.17F
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        7.3755100000E+07 (Input point)
+ 
+                   Pre-triangular equations:   0
+                   Post-triangular equations:  1
+ 
+      1   0        0.0000000000E+00 (After pre-processing)
+      2   0        0.0000000000E+00 (After scaling)
+ 
+ ** Feasible solution. Value of objective =    73755100.0000
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     11   4        4.1808465062E+06 2.0E+05     5 1.0E+00    3 F  T
+     16   4        2.2470483695E+06 8.1E+01    38 1.0E+00    6 F  T
+     19   4        2.2470483695E+06 3.6E-10    38
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- main.gms(651) 2 Mb
+--- Reading solution for model Proyeccion
+--- main.gms(606) 3 Mb
+--- Generating MIP model Slave_GT
+--- main.gms(610) 3 Mb
+--- LOOPS K = 2
+---   25 rows  23 columns  47 non-zeroes
+---   6 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.361
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+MIP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.02 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Fixing integer variables, and solving final LP...
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+LP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.00sec (det. 0.02 ticks)
+
+Proven optimal solution.
+
+MIP Solution:      1120289.293901    (0 iterations, 0 nodes)
+Final Solve:       1120289.293901    (0 iterations)
+
+Best possible:     1120289.293901
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+--- Restarting execution
+--- main.gms(610) 2 Mb
+--- Reading solution for model Slave_GT
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_GH
+--- main.gms(612) 3 Mb
+--- LOOPS K = 2
+---   5 rows  5 columns  9 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.425
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'p_GH(H001)'.
+Presolve time = 0.00 sec. (0.00 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.00 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.00 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(612) 2 Mb
+--- Reading solution for model Slave_GH
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_Net
+--- main.gms(614) 3 Mb
+--- LOOPS K = 2
+---   86 rows  135 columns  227 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.503
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'inj_fromto(B030)'.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.04 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Using devex.
+LP status(2): unbounded
+Cplex Time: 0.01sec (det. 0.03 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(614) 2 Mb
+--- Reading solution for model Slave_Net
+--- main.gms(606) 3 Mb
+--- Generating LP model Maestro
+--- main.gms(636) 3 Mb
+--- LOOPS K = 2
+---   23 rows  31 columns  55 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.567
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Tried aggregator 1 time.
+LP Presolve eliminated 23 rows and 31 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.02 ticks)
+
+Optimal solution found.
+Objective :     7258069.036089
+
+--- Restarting execution
+--- main.gms(636) 2 Mb
+--- Reading solution for model Maestro
+--- main.gms(606) 3 Mb
+--- Generating QCP model Proyeccion
+--- main.gms(651) 5 Mb
+--- LOOPS K = 2
+---   25 rows  52 columns  96 non-zeroes
+---   158 nl-code  39 nl-non-zeroes
+--- main.gms(651) 3 Mb
+--- Executing CONOPT: elapsed 0:00:00.646
+CONOPT 3         24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+ 
+ 
+    C O N O P T 3   version 3.17F
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        4.8352029892E+07 (Input point)
+ 
+                   Pre-triangular equations:   0
+                   Post-triangular equations:  1
+ 
+      1   0        0.0000000000E+00 (After pre-processing)
+      2   0        0.0000000000E+00 (After scaling)
+ 
+ ** Feasible solution. Value of objective =    50599078.2616
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     11   4        6.0094111574E+06 7.8E+05    35 1.0E+00    2 F  T
+     16   4        5.1740115829E+06 9.3E-10    38
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- main.gms(651) 2 Mb
+--- Reading solution for model Proyeccion
+--- main.gms(606) 3 Mb
+--- Generating MIP model Slave_GT
+--- main.gms(610) 3 Mb
+--- LOOPS K = 3
+---   25 rows  23 columns  47 non-zeroes
+---   6 discrete-columns
+--- Executing CPLEX: elapsed 0:00:00.710
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+MIP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.02 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Fixing integer variables, and solving final LP...
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+LP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.00sec (det. 0.02 ticks)
+
+Proven optimal solution.
+
+MIP Solution:      1120289.293901    (0 iterations, 0 nodes)
+Final Solve:       1120289.293901    (0 iterations)
+
+Best possible:     1120289.293901
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+--- Restarting execution
+--- main.gms(610) 2 Mb
+--- Reading solution for model Slave_GT
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_GH
+--- main.gms(612) 3 Mb
+--- LOOPS K = 3
+---   5 rows  5 columns  9 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.790
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'p_GH(H001)'.
+Presolve time = 0.00 sec. (0.00 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.00 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.00 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(612) 2 Mb
+--- Reading solution for model Slave_GH
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_Net
+--- main.gms(614) 3 Mb
+--- LOOPS K = 3
+---   86 rows  135 columns  227 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.853
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'inj_fromto(B030)'.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.04 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.03 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(614) 2 Mb
+--- Reading solution for model Slave_Net
+--- main.gms(606) 3 Mb
+--- Generating LP model Maestro
+--- main.gms(636) 3 Mb
+--- LOOPS K = 3
+---   34 rows  31 columns  68 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.917
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Tried aggregator 1 time.
+LP Presolve eliminated 34 rows and 31 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(1): optimal
+Cplex Time: 0.01sec (det. 0.03 ticks)
+
+Optimal solution found.
+Objective :     7258069.036089
+
+--- Restarting execution
+--- main.gms(636) 2 Mb
+--- Reading solution for model Maestro
+--- main.gms(606) 3 Mb
+--- Generating QCP model Proyeccion
+--- main.gms(651) 5 Mb
+--- LOOPS K = 3
+---   36 rows  52 columns  109 non-zeroes
+---   158 nl-code  39 nl-non-zeroes
+--- main.gms(651) 3 Mb
+--- Executing CONOPT: elapsed 0:00:00.981
+CONOPT 3         24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+ 
+ 
+    C O N O P T 3   version 3.17F
+    Copyright (C)   ARKI Consulting and Development A/S
+                    Bagsvaerdvej 246 A
+                    DK-2880 Bagsvaerd, Denmark
+ 
+ 
+   Iter Phase Ninf   Infeasibility   RGmax    NSB   Step InItr MX OK
+      0   0        2.7140132788E+07 (Input point)
+ 
+                   Pre-triangular equations:   0
+                   Post-triangular equations:  1
+ 
+      1   0        4.5474735089E-13 (After pre-processing)
+      2   0        5.5511151231E-17 (After scaling)
+ 
+ ** Feasible solution. Value of objective =    32314144.3709
+ 
+   Iter Phase Ninf     Objective     RGmax    NSB   Step InItr MX OK
+     11   4        1.9843725963E+07 2.0E-02    26 1.0E+00    3 F  T
+     12   4        1.9843725963E+07 4.7E-10    26
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Restarting execution
+--- main.gms(651) 2 Mb
+--- Reading solution for model Proyeccion
+--- main.gms(606) 3 Mb
+--- Generating MIP model Slave_GT
+--- main.gms(610) 3 Mb
+--- LOOPS K = 4
+---   25 rows  23 columns  47 non-zeroes
+---   6 discrete-columns
+--- Executing CPLEX: elapsed 0:00:01.045
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+MIP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.00 sec. (0.02 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.00 sec. (0.02 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.00sec (det. 0.02 ticks)
+Fixing integer variables, and solving final LP...
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_WorkDir                                 "C:\nconvex-gams\Simulacion IEEE 39 BUS\225a\"
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0
+CPXPARAM_MIP_Display                             4
+Tried aggregator 1 time.
+LP Presolve eliminated 25 rows and 23 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.00sec (det. 0.02 ticks)
+
+Proven optimal solution.
+
+MIP Solution:      1120289.293901    (0 iterations, 0 nodes)
+Final Solve:       1120289.293901    (0 iterations)
+
+Best possible:     1120289.293901
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+--- Restarting execution
+--- main.gms(610) 2 Mb
+--- Reading solution for model Slave_GT
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_GH
+--- main.gms(612) 3 Mb
+--- LOOPS K = 4
+---   5 rows  5 columns  9 non-zeroes
+--- Executing CPLEX: elapsed 0:00:01.109
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'p_GH(H001)'.
+Presolve time = 0.00 sec. (0.00 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.00 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.00 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(612) 2 Mb
+--- Reading solution for model Slave_GH
+--- main.gms(606) 3 Mb
+--- Generating LP model Slave_Net
+--- main.gms(614) 3 Mb
+--- LOOPS K = 4
+---   86 rows  135 columns  227 non-zeroes
+--- Executing CPLEX: elapsed 0:00:01.175
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Dual infeasible due to empty column 'inj_fromto(B030)'.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(4): unbounded or infeasible
+Cplex Time: 0.00sec (det. 0.04 ticks)
+Presolve found the problem infeasible or unbounded.
+Rerunning with presolve turned off and solving with LPMETHOD=0
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_Preprocessing_Presolve                  0
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_LPMethod                                1
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Using devex.
+LP status(2): unbounded
+Cplex Time: 0.00sec (det. 0.03 ticks)
+
+Model has an unbounded ray.
+--- Restarting execution
+--- main.gms(614) 2 Mb
+--- Reading solution for model Slave_Net
+--- main.gms(606) 3 Mb
+--- Generating LP model Maestro
+--- main.gms(636) 3 Mb
+--- LOOPS K = 4
+---   45 rows  31 columns  81 non-zeroes
+--- Executing CPLEX: elapsed 0:00:01.252
+
+IBM ILOG CPLEX   24.9.2 r64480 Released Nov 14, 2017 WEI x86 64bit/MS Windows 
+Cplex 12.7.1.0
+
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_Tune_TimeLimit                          200
+Tried aggregator 1 time.
+LP Presolve eliminated 45 rows and 31 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+LP status(1): optimal
+Cplex Time: 0.00sec (det. 0.04 ticks)
+
+Optimal solution found.
+Objective :     7258069.036089
+
+--- Restarting execution
+--- main.gms(636) 2 Mb
+--- Reading solution for model Maestro
+--- main.gms(711) 3 Mb
+--- Putfile f_gen C:\nconvex-gams\Simulacion IEEE 39 BUS\Generacion/Generacion_47.csv
+--- Putfile f_price C:\nconvex-gams\Simulacion IEEE 39 BUS\Precios/Precios_47.csv
+--- Putfile f_conv C:\nconvex-gams\Simulacion IEEE 39 BUS\Historia/Historia_47.csv
+*** Status: Normal completion
+--- Job main.gms Stop 02/03/26 02:26:26 elapsed 0:00:01.315

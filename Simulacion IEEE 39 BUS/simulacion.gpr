@@ -1,0 +1,23 @@
+[PROJECT]
+
+[RP:UNTITLED_1]
+1=
+
+[RP:IEEE_39_BUS]
+1=
+
+[RP:MAIN]
+1=
+
+[MRUFILES]
+1=C:\nconvex-gams\IEEE 39 BUS\IEEE_39_BUS.gms
+
+[OPENWINDOW_1]
+FILE0=C:\nconvex-gams\Simulacion IEEE 39 BUS\main.gms
+FILE1=C:\nconvex-gams\Simulacion IEEE 39 BUS\main.lst
+FILE2=C:\nconvex-gams\Simulacion IEEE 39 BUS\main.gms
+MAXIM=0
+TOP=50
+LEFT=50
+HEIGHT=400
+WIDTH=400
