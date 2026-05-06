@@ -1,0 +1,24 @@
+param u0 := 0;
+param p0 := 0;
+
+param pmin := 50;
+param pmax := 200;
+
+param coef2 := 28;
+param coef1 := 800;
+param c_arr := 6000;
+
+param heat_rate := 2.2;
+param no_load_consumption := 40;
+param cComb := 12;
+param dComb := 18000;
+
+param ramp_n := 20;
+param ramp_up := 100;
+param ramp_dn := 100;
+
+param tminUp := 4;
+param tminDn := 3;
+
+param arrd_max := 2;
+param pard_max := 2;
