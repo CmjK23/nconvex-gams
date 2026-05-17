@@ -1,0 +1,172 @@
+set ut := G1 G2 G3 G4 G5;
+
+param Demanda := 
+1 600 
+2 520 
+3 510 
+4 530 
+5 585 
+6 610 
+7 640 
+8 620 
+9 670 
+10 720 
+11 820 
+12 900
+13 850 
+14 910 
+15 1000 
+16 980 
+17 1100 
+18 1050
+19 950 
+20 900 
+21 850 
+22 770 
+23 710 
+24 650
+;
+
+param u0 :=
+G1 0
+G2 1
+G3 0
+G4 1
+G5 0
+;
+
+param p0 :=
+G1 0
+G2 120
+G3 0
+G4 200
+G5 0
+;
+
+param pmin :=
+G1 50
+G2 80
+G3 30
+G4 100
+G5 60
+;
+
+param pmax :=
+G1 200
+G2 300
+G3 150
+G4 400
+G5 250
+;
+
+param coef1 :=
+G1 800
+G2 1200
+G3 500
+G4 1500
+G5 900
+;
+
+param coef2 :=
+G1 28
+G2 25
+G3 32
+G4 24
+G5 27
+;
+
+param c_arr :=
+G1 6000
+G2 8000
+G3 4000
+G4 10000
+G5 7000
+;
+
+param heat_rate :=
+G1 2.2
+G2 2.0
+G3 2.5
+G4 1.9
+G5 2.1
+;
+
+param no_load_consumption :=
+G1 40
+G2 60
+G3 25
+G4 80
+G5 50
+;
+
+param cComb :=
+G1 12
+G2 12
+G3 12
+G4 12
+G5 12
+;
+
+param dComb :=
+G1 18000
+G2 25000
+G3 14000
+G4 30000
+G5 20000
+;
+
+param ramp_n :=
+G1 20
+G2 30
+G3 15
+G4 40
+G5 25
+;
+
+param ramp_up :=
+G1 100
+G2 120
+G3 80
+G4 150
+G5 110
+;
+
+param ramp_dn :=
+G1 100
+G2 120
+G3 80
+G4 150
+G5 110
+;
+
+param tminUp :=
+G1 4
+G2 5
+G3 3
+G4 6
+G5 4
+;
+
+param tminDn :=
+G1 3
+G2 4
+G3 2
+G4 5
+G5 3
+;
+
+param arrd_max :=
+G1 2
+G2 2
+G3 3
+G4 1
+G5 2
+;
+
+param pard_max :=
+G1 2
+G2 2
+G3 3
+G4 1
+G5 2
+;
